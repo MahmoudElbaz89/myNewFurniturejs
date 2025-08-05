@@ -1,21 +1,9 @@
-import {
-  Button,
-  TextField,
-  Card,
-  CardContent,
-  Typography,
-  Box,
-  Grid,
-  Container,
-} from "@mui/material";
-import {
-  Map as MapIcon,
-  Phone as PhoneIcon,
-  Email as MailIcon,
-  AccessTime as ClockIcon,
-} from "@mui/icons-material";
-import { toast } from "sonner";
 import { useState } from "react";
+import { toast } from "sonner";
+import MapIcon from "@mui/icons-material/Map";
+import PhoneIcon from "@mui/icons-material/Phone";
+import EmailIcon from "@mui/icons-material/Email";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -38,22 +26,22 @@ export default function Contact() {
 
   const contactInfo = [
     {
-      icon: <MapIcon color="primary" sx={{ fontSize: 30 }} />,
+      icon: <MapIcon className="text-furniture-green w-8 h-8" />,
       title: "Visit Our Showroom",
       details: ["123 Furniture Street, Design District, NY 10001"],
     },
     {
-      icon: <PhoneIcon color="primary" sx={{ fontSize: 30 }} />,
+      icon: <PhoneIcon className="text-furniture-green w-8 h-8" />,
       title: "Call Us",
       details: ["(123) 456-7890"],
     },
     {
-      icon: <MailIcon color="primary" sx={{ fontSize: 30 }} />,
+      icon: <EmailIcon className="text-furniture-green w-8 h-8" />,
       title: "Email Us",
       details: ["info@furniture.com"],
     },
     {
-      icon: <ClockIcon color="primary" sx={{ fontSize: 30 }} />,
+      icon: <AccessTimeIcon className="text-furniture-green w-8 h-8" />,
       title: "Business Hours",
       details: [
         "Monday - Friday: 9am - 5pm",
@@ -64,275 +52,234 @@ export default function Contact() {
   ];
 
   return (
-    <Box sx={{ minHeight: "100vh", bgcolor: "background.default" }}>
-      {/* Hero Section */}
-      <Box
-        sx={{
-          background: "linear-gradient(to right, #FFF8F0, #FFE8D6)",
-          py: 10,
-          textAlign: "center",
-        }}
-      >
-        <Container maxWidth="lg">
-          <Typography
-            variant="h3"
-            component="h1"
-            sx={{ mb: 3, fontWeight: "bold" }}
-          >
-            Get in Touch
-          </Typography>
-          <Typography
-            variant="h6"
-            color="text.secondary"
-            sx={{ maxWidth: 800, mx: "auto" }}
-          >
-            Have questions about our furniture or need design consultation? We'd
-            love to hear from you and help bring your vision to life.
-          </Typography>
-        </Container>
-      </Box>
+    <>
+      <div className="min-h-screen bg-white">
+        {/* Hero Section */}
+        <div className="py-16 text-center bg-gradient-to-r from-furniture-cream to-furniture-warm">
+          <div className="container max-w-6xl mx-auto px-4">
+            <h1 className="text-4xl font-bold mb-3">Get in Touch</h1>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Have questions about our furniture or need design consultation?
+              We'd love to hear from you and help bring your vision to life.
+            </p>
+          </div>
+        </div>
 
-      {/* Contact Form and Info */}
-      <Container maxWidth="lg" sx={{ py: 10 }}>
-        <Grid container spacing={6}>
-          {/* Contact Form */}
-          <Grid item xs={12} md={6}>
-            <Card elevation={3} sx={{ height: "100%" }}>
-              <CardContent sx={{ p: 4 }}>
-                <Typography
-                  variant="h5"
-                  component="h2"
-                  sx={{ mb: 4, fontWeight: "bold" }}
-                >
-                  Send us a Message
-                </Typography>
-                <Box
-                  component="form"
-                  onSubmit={handleSubmit}
-                  sx={{ "& .MuiTextField-root": { mb: 3 } }}
-                >
-                  <Grid container spacing={2}>
-                    <Grid item xs={12} sm={6}>
-                      <TextField
-                        fullWidth
-                        label="Name *"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        required
-                        variant="outlined"
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <TextField
-                        fullWidth
-                        label="Email *"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                        variant="outlined"
-                      />
-                    </Grid>
-                  </Grid>
-                  <TextField
-                    fullWidth
-                    label="Subject"
+        {/* Contact Form and Info */}
+        <div className="container flex flex-col lg:flex-row max-w-6xl mx-auto pt-20  px-4">
+          <div className=" w-[45%] justify-center items-center  mx-auto gap-8">
+            {/* Contact Form */}
+            <div className="rounded-lg   shadow-2xl p-6 mb-8">
+              <h2 className="text-2xl font-bold mb-6 text-center">
+                Send us a Message
+              </h2>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                      Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-furniture-green focus:border-transparent"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                      Email *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-furniture-green focus:border-transparent"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label
+                    htmlFor="subject"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
+                    Subject
+                  </label>
+                  <input
+                    type="text"
+                    id="subject"
                     name="subject"
                     value={formData.subject}
                     onChange={handleInputChange}
-                    variant="outlined"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-furniture-green focus:border-transparent"
                   />
-                  <TextField
-                    fullWidth
-                    label="Message *"
+                </div>
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
+                    Message *
+                  </label>
+                  <textarea
+                    id="message"
                     name="message"
+                    rows="4"
                     value={formData.message}
                     onChange={handleInputChange}
                     required
-                    multiline
-                    rows={4}
-                    variant="outlined"
-                  />
-                  <Button
-                    type="submit"
-                    variant="contained"
-                    color="primary"
-                    size="large"
-                    fullWidth
-                    sx={{ mt: 2 }}
-                  >
-                    Send Message
-                  </Button>
-                </Box>
-              </CardContent>
-            </Card>
-          </Grid>
-
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-furniture-green focus:border-transparent"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  className="w-full bg-furniture-green text-white py-2 px-4 rounded-md hover:bg-furniture-green/90 transition-colors"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
           {/* Contact Information */}
-          <Grid item xs={12} md={6}>
-            <Box sx={{ mb: 6 }}>
-              <Typography
-                variant="h5"
-                component="h2"
-                sx={{ mb: 2, fontWeight: "bold" }}
-              >
-                Contact Information
-              </Typography>
-              <Typography variant="body1" color="text.secondary" sx={{ mb: 4 }}>
+          <div className="w-[45%] justify-center items-center  mx-auto gap-8">
+            <div className="mb-8 text-start">
+              <h2 className="text-2xl font-bold mb-4">Contact Information</h2>
+              <p className="text-gray-600 mb-6">
                 Visit our showroom to see our furniture collections in person,
                 or reach out to us through any of the following channels.
-              </Typography>
-            </Box>
+              </p>
+            </div>
 
-            <Grid container spacing={3}>
+            <div className="grid grid-rows-2 sm:grid-rows-2 lg:grid-rows-4 lg:grid-cols-2 justify-between gap-4">
               {contactInfo.map((info, index) => (
-                <Grid item xs={12} sm={6} key={index}>
-                  <Card variant="outlined" sx={{ height: "100%" }}>
-                    <CardContent>
-                      <Box
-                        sx={{
-                          display: "flex",
-                          alignItems: "flex-start",
-                          gap: 2,
-                        }}
-                      >
-                        <Box
-                          sx={{
-                            bgcolor: "primary.light",
-                            p: 1.5,
-                            borderRadius: 1,
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                          }}
-                        >
-                          {info.icon}
-                        </Box>
-                        <Box>
-                          <Typography
-                            variant="h6"
-                            component="h3"
-                            sx={{ fontWeight: 600, mb: 1 }}
-                          >
-                            {info.title}
-                          </Typography>
-                          {info.details.map((detail, idx) => (
-                            <Typography
-                              key={idx}
-                              variant="body2"
-                              color="text.secondary"
-                            >
-                              {detail}
-                            </Typography>
-                          ))}
-                        </Box>
-                      </Box>
-                    </CardContent>
-                  </Card>
-                </Grid>
+                <div
+                  key={index}
+                  className="border border-gray-200 rounded-lg p-2  bg-gray-50"
+                >
+                  <div className="flex items-start space-x-3">
+                    <div className="bg-furniture-green/10 p-2 rounded-lg">
+                      {info.icon}
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg">{info.title}</h3>
+                      <div className=" mt-1">
+                        {info.details.map((detail, idx) => (
+                          <p key={idx} className="text-sm text-gray-600">
+                            {detail}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               ))}
-            </Grid>
-          </Grid>
-        </Grid>
-      </Container>
+            </div>
+            {/*  */}
+          </div>
+        </div>
+      </div>
 
       {/* Map Section */}
-      <Box sx={{ py: 10, bgcolor: "background.paper" }}>
-        <Container maxWidth="lg">
-          <Box sx={{ textAlign: "center", mb: 8 }}>
-            <Typography
-              variant="h4"
-              component="h2"
-              sx={{ mb: 2, fontWeight: "bold" }}
-            >
-              Find Our Showroom
-            </Typography>
-            <Typography variant="body1" color="text.secondary">
+      <div className=" bg-gray-50">
+        <div className="container max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-2">Find Our Showroom</h2>
+            <p className="text-gray-600">
               Located in the heart of the design district, our showroom features
               our latest collections.
-            </Typography>
-          </Box>
+            </p>
+          </div>
 
-          <Card elevation={3}>
-            <CardContent sx={{ p: 6, textAlign: "center" }}>
-              <MapIcon color="primary" sx={{ fontSize: 60, mb: 2 }} />
-              <Typography
-                variant="h6"
-                component="h3"
-                sx={{ mb: 1, fontWeight: 600 }}
-              >
-                Interactive Map
-              </Typography>
-              <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
-                123 Furniture Street, Design District, NY 10001
-              </Typography>
-              <Button variant="outlined" color="primary" size="large">
-                Get Directions
-              </Button>
-            </CardContent>
-          </Card>
-        </Container>
-      </Box>
+          <div className="bg-white rounded-lg shadow-md p-6 text-center">
+              <div className="w-full mt-8 rounded-lg overflow-hidden shadow-lg">
+                <iframe
+                  title="Our Location"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2152090565!2d-73.9878446845938!3d40.7484405793279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ0JzU0LjQiTiA3M8KwNTknMTUuMyJX!5e0!3m2!1sen!2sus!4v1234567890"
+                  width="100%"
+                  height="400"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full"
+                ></iframe>
+              </div>
+              
+            <h3 className="text-xl font-semibold mt-4 mb-1">Interactive Map</h3>
+            <p className="text-gray-600 mb-4">
+              123 Furniture Street, Design District, NY 10001
+            </p>
+            <a
+              href="https://maps.google.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block border border-furniture-green text-furniture-green px-6 py-2 rounded-md hover:bg-furniture-green hover:text-white transition-colors"
+            >
+              Get Directions
+            </a>
+          </div>
+        </div>
+      </div>
 
       {/* FAQ Section */}
-      <Container maxWidth="md" sx={{ py: 10 }}>
-        <Box sx={{ textAlign: "center", mb: 8 }}>
-          <Typography
-            variant="h4"
-            component="h2"
-            sx={{ mb: 2, fontWeight: "bold" }}
-          >
-            Frequently Asked Questions
-          </Typography>
-          <Typography variant="body1" color="text.secondary">
-            Quick answers to common questions about our furniture and services.
-          </Typography>
-        </Box>
+      <div className="py-10">
+        <div className="container max-w-4xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-2">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-gray-600">
+              Quick answers to common questions about our furniture and
+              services.
+            </p>
+          </div>
 
-        <Grid container spacing={4}>
-          {[
-            {
-              question: "Do you offer custom furniture?",
-              answer:
-                "Yes! We specialize in custom furniture design. Contact us to discuss your specific needs and vision.",
-            },
-            {
-              question: "What's your delivery timeframe?",
-              answer:
-                "Standard delivery is 2-4 weeks. Custom pieces typically take 6-8 weeks depending on complexity.",
-            },
-            {
-              question: "Do you offer warranties?",
-              answer:
-                "All our furniture comes with a 5-year warranty on craftsmanship and materials.",
-            },
-            {
-              question: "Can I schedule a consultation?",
-              answer:
-                "Absolutely! We offer both in-showroom and in-home design consultations. Contact us to schedule.",
-            },
-          ].map((item, index) => (
-            <Grid item xs={12} sm={6} key={index}>
-              <Card variant="outlined" sx={{ height: "100%" }}>
-                <CardContent>
-                  <Typography
-                    variant="h6"
-                    component="h3"
-                    sx={{ mb: 1.5, fontWeight: 600 }}
-                  >
-                    {item.question}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {item.answer}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-    </Box>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[
+              {
+                question: "Do you offer custom furniture?",
+                answer:
+                  "Yes! We specialize in custom furniture design. Contact us to discuss your specific needs and vision.",
+              },
+              {
+                question: "What's your delivery timeframe?",
+                answer:
+                  "Standard delivery is 2-4 weeks. Custom pieces typically take 6-8 weeks depending on complexity.",
+              },
+              {
+                question: "Do you offer warranties?",
+                answer:
+                  "All our furniture comes with a 5-year warranty on craftsmanship and materials.",
+              },
+              {
+                question: "Can I schedule a consultation?",
+                answer:
+                  "Absolutely! We offer both in-showroom and in-home design consultations. Contact us to schedule.",
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="border border-gray-200 rounded-lg p-4"
+              >
+                <h3 className="font-semibold text-lg mb-2">{item.question}</h3>
+                <p className="text-gray-600 text-sm">{item.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </>
   );
 }

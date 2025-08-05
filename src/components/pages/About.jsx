@@ -54,7 +54,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="py-16 text-center bg-gradient-to-r from-orange-50 to-amber-50">
+      <div className="py-16 text-center bg-gradient-to-r from-furniture-cream to-furniture-warm">
         <Container maxWidth="lg">
           <h1 className="mb-6 font-bold text-5xl ">About Furniture Studio</h1>
           <h6 className="max-w-3xl mx-auto text-gray-600 text-center mb-6 ">

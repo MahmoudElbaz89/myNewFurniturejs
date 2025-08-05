@@ -24,7 +24,7 @@ import productLacus from "../../assets/imgs/augue lacus.webp";
 import productCommodo from "../../assets/imgs/commodo amcorper.webp";
 import productSofa1 from "../../assets/imgs/imgi_159_360_F_1160921373_aPTocF0caQi0ym9rSe1wfPo9cIb37I9o.jpg";
 import productSofa2 from "../../assets/imgs/imgi_169_sofa-modern-full-size-fine-no-artifacts-21390098.jpg";
-import productBed1 from "../../assets/imgs/imgi_170_two-different-styles-wooden-furniture-modern-design-modern-style-minimalist-appearance-colorful-design-bed-no-background-different-design-png-white-background-isolated-abstract-3d-model_789096-14304.jpg";
+import productBed1 from "../../assets/imgs/tarabiza.jpg";
 import productSofa3 from "../../assets/imgs/imgi_178_sofa-sectional-L8q9QmF-600.jpg";
 import productChair1 from "../../assets/imgs/imgi_204_linz-craft-chair-mone-034-chairs-78259351-34442773725335.jpg";
 import productSofa4 from "../../assets/imgs/imgi_208_Daniel%2BSofa%2BSide%2BAngle%2BNo%2BBackground.jpg";
@@ -427,5 +427,5 @@ export const categories = [
   { name: "Sofas", icon: "Sofa" },
   { name: "Beds", icon: "Bed" },
   { name: "Tables", icon: "Table" },
-  { name: "Decor", icon: "Home" },
+  
 ];

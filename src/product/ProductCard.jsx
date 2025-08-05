@@ -162,17 +162,31 @@ export function ProductCard({ product }) {
             to={`/products/${product.id}`}
             size="small"
             startIcon={<Eye />}
-            sx={{ textTransform: "none" }}
+            sx={{
+              textTransform: "none",
+              color: "hsl(156,35%,35%)",
+              transition: "all .8s ease",
+              "&:hover": {
+                backgroundColor: "hsl(156,35%,25%)",
+                color: "white",
+              },
+            }}
           >
             View Details
           </Button>
           <Button
-            variant="contained"
+            sx={{
+              textTransform: "none",
+              backgroundColor: "hsl(156,35%,35%)",
+              color: "white",
+              "&:hover": {
+                backgroundColor: "hsl(156,35%,25%)",
+              },
+            }}
             size="small"
-            startIcon={<ShoppingCart />}
             onClick={handleAddToCart}
-            sx={{ textTransform: "none" }}
           >
+            <ShoppingCart fontSize="" className="mr-2 text-xl" />
             Add to Cart
           </Button>
         </CardActions>

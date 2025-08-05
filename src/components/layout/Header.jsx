@@ -21,7 +21,7 @@ const categories = [
   { name: "Sofas", href: "/shop?category=Sofas" },
   { name: "Beds", href: "/shop?category=Beds" },
   { name: "Tables", href: "/shop?category=Tables" },
-  { name: "Decor", href: "/shop?category=Decor" },
+ 
 ];
 
 export default function Header() {
@@ -74,7 +74,7 @@ export default function Header() {
                 <PersonIcon className="h-5 w-5" />
               </Link>
             </button>
-            <Link to="/cart" className="relative">
+            <Link to="" className="relative">
               <button className="p-2 text-gray-600 hover:text-furniture-green">
                 <ShoppingCartIcon className="h-5 w-5" />
                 {cartItemsCount > 0 && (
