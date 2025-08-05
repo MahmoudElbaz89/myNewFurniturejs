@@ -1,4 +1,9 @@
-﻿# Dependencies
+﻿# First, backup the current .gitignore
+Copy-Item .gitignore .gitignore.backup
+
+# Create a new clean .gitignore
+@"
+# Dependencies
 /node_modules
 /.pnp
 .pnp.js
@@ -32,3 +37,8 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+
+# Problematic files
+src/assets/imgs/imgi_152_*
+src/assets/imgs/imgi_218_*
+"@ | Out-File -FilePath .gitignore -Encoding utf8
