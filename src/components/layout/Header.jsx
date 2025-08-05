@@ -33,20 +33,7 @@ export default function Header() {
 
   return (
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
-      {/* Top social bar */}
-      <div className="bg-furniture-green text-white py-2 px-4">
-        <div className="container mx-auto flex justify-between items-center text-sm">
-          <div className="hidden md:flex space-x-4">
-            <span>Showrooms</span>
-            <span>Custom Work</span>
-            <span>Gift Cards</span>
-          </div>
-          <div className="flex space-x-4">
-            <span>📞 576-393-4937</span>
-            <span className="hidden md:inline">📍 Street Name, NY 38964</span>
-          </div>
-        </div>
-      </div>
+     
 
       {/* Main header */}
       <div className="container mx-auto px-4 py-4">
@@ -82,7 +69,10 @@ export default function Header() {
               <SearchIcon className="h-10 w-10" />
             </button>
             <button className="hidden md:inline-flex p-2 text-gray-600 hover:text-furniture-green">
-              <PersonIcon className="h-5 w-5" />
+              <Link to="/login">
+
+                <PersonIcon className="h-5 w-5" />
+              </Link>
             </button>
             <Link to="/cart" className="relative">
               <button className="p-2 text-gray-600 hover:text-furniture-green">

@@ -1,0 +1,291 @@
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import {accounts} from "../data/accounts"
+import {
+  Button,
+  TextField,
+  Checkbox,
+  FormControlLabel,
+  FormHelperText,
+  Typography,
+  IconButton,
+  InputAdornment,
+  Box,
+  CircularProgress,
+} from "@mui/material";
+import {
+  Lock as LockIcon,
+  Visibility,
+  VisibilityOff,
+  Person,
+  Email,
+} from "@mui/icons-material";
+
+export default function SignUp() {
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    termsAccepted: false,
+  });
+
+  const [errors, setErrors] = useState({});
+  const [showPassword, setShowPassword] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.firstName.trim()) {
+      newErrors.firstName = "First name is required";
+    }
+
+    if (!formData.lastName.trim()) {
+      newErrors.lastName = "Last name is required";
+    }
+
+    if (!formData.email) {
+      newErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "Email is invalid";
+    }
+
+    if (!formData.password) {
+      newErrors.password = "Password is required";
+    } else if (formData.password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters";
+    }
+
+    if (formData.password !== formData.confirmPassword) {
+      newErrors.confirmPassword = "Passwords do not match";
+    }
+
+    if (!formData.termsAccepted) {
+      newErrors.termsAccepted = "You must accept the terms and conditions";
+    }
+
+    setErrors(newErrors);
+    // return Object.keys(newErrors).length === 0;
+  };
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+
+    
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    })
+);
+
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors((prev) => ({
+        ...prev,
+        [name]: null,
+      }));
+    }
+  };
+
+ const handleSubmit= (e)=>{
+    e.preventDefault();
+    validateForm();
+    if(Object.keys(errors).length === 0){
+        setIsSubmitting(true);
+        accounts.push(formData);
+        console.log(accounts);
+        navigate("/login");
+        setIsSubmitting(false);
+    }
+ }
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full space-y-8 bg-white p-8 rounded-xl shadow-md">
+        <div className="text-center">
+          <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-furniture/10">
+            <LockIcon className="h-6 w-6 text-furniture" />
+          </div>
+          <h2 className="mt-6 text-3xl font-extrabold text-gray-900">
+            Create your account
+          </h2>
+          <p className="mt-2 text-sm text-gray-600">
+            Already have an account?{" "} 
+            <Link
+              to="/login"
+              className="font-medium text-furniture hover:text-furniture-dark"
+            >
+              Sign in
+            </Link>
+          </p>
+        </div>
+
+        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+          <div className="rounded-md shadow-sm space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <TextField
+                  fullWidth
+                  variant="outlined"
+                  label="First Name"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  error={!!errors.firstName}
+                  helperText={errors.firstName}
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <Person />
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+              </div>
+              <div>
+                <TextField
+                  fullWidth
+                  variant="outlined"
+                  label="Last Name"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                  error={!!errors.lastName}
+                  helperText={errors.lastName}
+                />
+              </div>
+            </div>
+
+            <div>
+              <TextField
+                fullWidth
+                variant="outlined"
+                label="Email address"
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+                error={!!errors.email}
+                helperText={errors.email}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <Email />
+                    </InputAdornment>
+                  ),
+                }}
+              />
+            </div>
+
+            <div>
+              <TextField
+                fullWidth
+                variant="outlined"
+                name="password"
+                label="Password"
+                type={showPassword ? "text" : "password"}
+                value={formData.password}
+                onChange={handleChange}
+                error={!!errors.password}
+                helperText={errors.password || "At least 6 characters"}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <LockIcon />
+                    </InputAdornment>
+                  ),
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton
+                        onClick={() => setShowPassword(!showPassword)}
+                        edge="end"
+                      >
+                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
+              />
+            </div>
+
+            <div>
+              <TextField
+                fullWidth
+                variant="outlined"
+                name="confirmPassword"
+                label="Confirm Password"
+                type={showPassword ? "text" : "password"}
+                value={formData.confirmPassword}
+                onChange={handleChange}
+                error={!!errors.confirmPassword}
+                helperText={errors.confirmPassword}
+              />
+            </div>
+          </div>
+
+          <div className="flex items-start">
+            <div className="flex items-center h-5">
+              <Checkbox
+                name="termsAccepted"
+                checked={formData.termsAccepted}
+                onChange={handleChange}
+                color="primary"
+              />
+            </div>
+            <div className="ml-3 text-sm">
+              <Typography
+                variant="body2"
+                color={errors.termsAccepted ? "error" : "textSecondary"}
+              >
+                I agree to the{" "}
+                <Link to="/terms" className="text-furniture hover:underline">
+                  Terms of Service
+                </Link>{" "}
+                and{" "}
+                <Link to="/privacy" className="text-furniture hover:underline">
+                  Privacy Policy
+                </Link>
+              </Typography>
+              {errors.termsAccepted && (
+                <FormHelperText error>{errors.termsAccepted}</FormHelperText>
+              )}
+            </div>
+          </div>
+
+          <div>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              className="bg-furniture hover:bg-furniture-dark"
+              size="large"
+              startIcon={
+                isSubmitting ? (
+                  <CircularProgress size={20} color="inherit" />
+                ) : null
+              }
+            >
+              {isSubmitting ? "Creating Account..." : "Create Account"}
+            </Button>
+          </div>
+
+          <div className="text-center text-sm text-gray-600">
+            <p>Or continue with</p>
+            <div className="mt-2 flex justify-center space-x-4">
+              <Button variant="outlined" className="w-full max-w-[200px]">
+                <img
+                  src="https://www.svgrepo.com/show/355037/google.svg"
+                  className="h-5 w-5 mr-2"
+                  alt="Google"
+                />
+                Google
+              </Button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
