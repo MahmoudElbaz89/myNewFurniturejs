@@ -31,9 +31,9 @@ export function BestSellers() {
 
         <div className="text-center">
           <Link to="/shop">
-            <Button variant="outlined" size="lg">
-              Shop All Products
-            </Button>
+            <button className="hover:bg-furniture-green hover:text-white font-semibold text-furniture-green border-furniture-green border-2 rounded-md px-8 py-2">
+              View All Products
+            </button>
           </Link>
         </div>
       </div>

@@ -90,14 +90,11 @@ export default function About() {
                   test of time.
                 </p>
               </div>
-              <Button
-                component={Link}
-                to="/shop"
-                variant="contained"
-                className="bg-furniture-green hover:bg-furniture-green/90 text-white font-bold py-3 px-8 rounded-lg normal-case"
-              >
-                Explore Our Collection
-              </Button>
+              <Link to="/shop">
+                <button className="bg-furniture-green text-white rounded-md px-8 py-2">
+                  Explore Our Collection
+                </button>
+              </Link>
             </div>
             <div className="lg:w-1/2">
               <img
@@ -141,16 +138,16 @@ export default function About() {
       </div>
 
       {/* Team Section */}
-      <div className="py-16">
+      {/* <div className="py-16">
         <Container maxWidth="lg">
           <div className="text-center mb-16">
-            <Typography variant="h4" className="mb-4 font-bold">
+            <h4 className="mb-4 font-bold text-3xl ">
               Meet Our Team
-            </Typography>
-            <Typography className="max-w-3xl mx-auto text-gray-600">
+            </h4>
+            <h4 className="max-w-3xl mx-auto text-gray-600">
               The passionate individuals behind every beautiful piece of
               furniture we create.
-            </Typography>
+            </h4>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -162,7 +159,7 @@ export default function About() {
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-72 object-cover transition-transform duration-500 hover:scale-105"
+                  className="w-full h-72 object-cover rounded-t-xl transition-transform duration-500 hover:scale-105"
                 />
                 <div className="p-6 text-center">
                   <Typography variant="h6" className="font-semibold">
@@ -176,7 +173,7 @@ export default function About() {
             ))}
           </div>
         </Container>
-      </div>
+      </div> */}
 
       {/* CTA Section */}
       <div className="py-16 bg-furniture-green text-white">
@@ -191,22 +188,20 @@ export default function About() {
             </Typography>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
+            <button
               component={Link}
               to="/shop"
-              variant="contained"
               className="bg-white text-furniture-green hover:bg-gray-100 font-bold py-3 px-8 rounded-lg normal-case"
             >
               Shop Now
-            </Button>
-            <Button
+            </button>
+            <button
               component={Link}
               to="/contact"
-              variant="outlined"
-              className="text-white border-white hover:bg-white/10 py-3 px-8 rounded-lg normal-case"
+              className="bg-white text-furniture-green hover:bg-gray-100 font-bold py-3 px-8 rounded-lg normal-case"
             >
               Contact Us
-            </Button>
+            </button>
           </div>
         </Container>
       </div>

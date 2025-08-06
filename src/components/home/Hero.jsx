@@ -12,7 +12,7 @@ import blueArmchair from "../../assets/blue-armchair.jpg";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-background via-furniture-cream to-furniture-warm">
+    <section className="relative bg-gradient-to-r from-furniture-cream to-furniture-warm overflow-hidden ">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[rgb(58,120,95)]/20 to-transparent"></div>
@@ -79,15 +79,13 @@ export function Hero() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm-row gap-4">
               <Link to="/shop">
-                <Button
-                  variant="contained"
-                  size="lg"
-                  sx={{ borderRadius: "9999px" }}
-                  className="group"
-                >
+                <button className="bg-furniture-green text-white rounded-md px-8 py-2">
                   Shop Collection
-                  <ArrowForwardIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
+                  <ArrowForwardIcon
+                    fontSize=""
+                    className="ml-4 h-4 w-4 transition-transform group-hover:translate-x-1"
+                  />
+                </button>
               </Link>
             </div>
           </div>
@@ -105,7 +103,7 @@ export function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
 
                 {/* Floating Product Cards */}
-                <div className="absolute top-6 left-6">
+                <div className="absolute top-6 left-6 hover:-translate-y-2 transition-all duration-300">
                   <Link to="/shop?category=Chairs" className="block group">
                     <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                       <div className="flex items-center gap-3">
@@ -125,7 +123,7 @@ export function Hero() {
                   </Link>
                 </div>
 
-                <div className="absolute bottom-6 right-6">
+                <div className="absolute bottom-6 right-6  hover:-translate-y-2 transition-all duration-300 ">
                   <Link to="/shop?category=Armchairs" className="block group">
                     <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                       <div className="flex items-center gap-3">
@@ -148,27 +146,9 @@ export function Hero() {
                 {/* Discount Badge */}
                 <div className="absolute top-6 right-6">
                   <Link to="/shop">
-                    <Badge
-                      variant="outlined"
-                      sx={{
-                        color: "rgb(255, 0, 0)",
-                        borderColor: "rgba(255, 0, 0, 0.2)",
-                        backgroundColor: "rgba(255, 0, 0, 0.05)",
-                        padding: "0.5rem 1rem",
-                        borderRadius: "9999px",
-                        fontSize: "0.875rem",
-                        fontWeight: 500,
-                        textTransform: "none",
-                        "& .MuiBadge-badge": {
-                          position: "relative",
-                          transform: "none",
-                          margin: 0,
-                          padding: 0,
-                        },
-                      }}
-                    >
+                    <button className="bg-red-600 font-bold text-white rounded-full px-4 py-2">
                       25% OFF
-                    </Badge>
+                    </button>
                   </Link>
                 </div>
               </div>
@@ -176,7 +156,7 @@ export function Hero() {
               {/* Category Quick Links */}
               <div className="grid grid-cols-2 gap-4 mt-6">
                 <Link to="/shop?category=Chairs" className="group">
-                  <div className="bg-[rgb(58,120,95)] border border-[rgb(58,120,95)] hover:bg-[rgba(58,120,95,0.87)]    text-white  rounded-xl p-4 text-center transition-all duration-300">
+                  <div className="bg-[rgb(207,226,219)] border  hover:bg-furniture-green hover:text-white   text-black  rounded-xl p-4 text-center transition-all duration-300">
                     <h4 className="font-semibold">Chairs</h4>
                     <p className="text-sm opacity-80 group-hover:opacity-100">
                       50+ Items

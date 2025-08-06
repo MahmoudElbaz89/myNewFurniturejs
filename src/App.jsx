@@ -14,38 +14,48 @@ import Contact from "./components/pages/Contact";
 import NotFound from "./components/pages/NotFound";
 import Login from "./components/pages/Login";
 import SignUp from "./components/pages/SignUp";
+import Checkout from "./components/pages/Checkout";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+import { Toaster } from "sonner";
 // import "./index.css";
 
 const queryClient = new QueryClient();
-
+const stripePromise = loadStripe(
+  "pk_test_51RtBVYFdpTDDRKF9c98ISBfOC2xXL75D37DMBzjkB6kcJ7SNSuZlAie8HMhMHss2V9RQYQyff8ADKDQxw6Naz4rr00l2qRZbBb"
+);
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <Router>
-      <Tooltip>
-        <CartProvider>
-          <Snackbar>
-            <Alert />
-          </Snackbar>
-          <div className="min-h-screen flex flex-col">
-            <Header />
-            <main className="flex-1">
-              <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/shop" element={<Shop />} />
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<SignUp />} />
+      <Elements stripe={stripePromise}>
+        <Toaster richColors />
+        <Tooltip>
+          <CartProvider>
+            <Snackbar>
+              <Alert />
+            </Snackbar>
+            <div className="min-h-screen flex flex-col bg-color">
+              <Header />
+              <main className="flex-1">
+                <Routes>
+                  <Route path="/" element={<Index />} />
+                  <Route path="/shop" element={<Shop />} />
+                  <Route path="/cart" element={<Cart />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/signup" element={<SignUp />} />
+                  <Route path="/checkout" element={<Checkout />} />
 
-                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </main>
-            <Footer />
-          </div>
-        </CartProvider>
-      </Tooltip>
+                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </main>
+              <Footer />
+            </div>
+          </CartProvider>
+        </Tooltip>
+      </Elements>
     </Router>
   </QueryClientProvider>
 );

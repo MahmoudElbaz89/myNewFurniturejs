@@ -32,9 +32,7 @@ export default function Header() {
   const cartItemsCount = getCartItemsCount();
 
   return (
-    <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
-     
-
+    <header className="color border-b border-gray-200 sticky top-0 z-50">
       {/* Main header */}
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
@@ -65,17 +63,16 @@ export default function Header() {
 
           {/* Right side actions */}
           <div className="flex items-center space-x-4">
-            <button className="hidden md:inline-flex p-2 text-gray-600 hover:text-furniture-green">
+            <button className="hidden md:inline-flex p-2 text-gray-600  rounded-lg hover:bg-[rgb(236,225,219)]">
               <SearchIcon className="h-10 w-10" />
             </button>
-            <button className="hidden md:inline-flex p-2 text-gray-600 hover:text-furniture-green">
+            <button className="hidden md:inline-flex p-2 text-gray-600  rounded-lg hover:bg-[rgb(236,225,219)]">
               <Link to="/login">
-
                 <PersonIcon className="h-5 w-5" />
               </Link>
             </button>
-            <Link to="" className="relative">
-              <button className="p-2 text-gray-600 hover:text-furniture-green">
+            <Link to="/cart" className="relative">
+              <button className="p-2 text-gray-600  rounded-lg hover:bg-[rgb(236,225,219)]">
                 <ShoppingCartIcon className="h-5 w-5" />
                 {cartItemsCount > 0 && (
                   <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs h-5 w-5 flex items-center justify-center rounded-full">

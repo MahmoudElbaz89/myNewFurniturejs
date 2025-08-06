@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import {
   Button,
   TextField,
@@ -9,8 +9,12 @@ import {
   FormHelperText,
 } from "@mui/material";
 import { Lock as LockIcon, Person as PersonIcon } from "@mui/icons-material";
+import { accounts } from "../data/accounts";
+import { toast } from "sonner";
 
 export default function Login() {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -21,6 +25,8 @@ export default function Login() {
     username: "",
     password: "",
   });
+
+  const [loginError, setLoginError] = useState("");
 
   const validateField = (name, value) => {
     if (!value)
@@ -83,8 +89,23 @@ export default function Login() {
 
     // Check if there are no errors
     if (Object.values(newErrors).every((error) => !error)) {
-      console.log("Login submitted:", formData);
       // Proceed with form submission
+      const account = accounts.find(
+        (acc) =>
+          acc.email === formData.username && acc.password === formData.password
+      );
+      if (account) {
+        
+        setLoginError("");
+        toast.success("Login successful!");
+        const redirectPath = new URLSearchParams(location.search).get(
+          "redirect"
+        );
+        navigate(redirectPath || "/");
+        //redirect or update state
+      } else {
+        setLoginError("Invalid email or password");
+      }
     }
   };
 
@@ -107,6 +128,11 @@ export default function Login() {
               create a new account
             </Link>
           </p>
+          {loginError && (
+            <Typography color="error" align="center" className="mt-2">
+              {loginError}
+            </Typography>
+          )}
         </div>
 
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
@@ -169,15 +195,13 @@ export default function Login() {
           </div>
 
           <div>
-            <Button
+            <button
               type="submit"
               fullWidth
-              variant="contained"
-              className="bg-furniture hover:bg-furniture-dark"
-              size="large"
+              className="bg-furniture hover:bg-furniture-dark w-full text-white font-bold py-2 px-6 rounded-lg normal-case"
             >
               Sign in
-            </Button>
+            </button>
           </div>
         </form>
       </div>

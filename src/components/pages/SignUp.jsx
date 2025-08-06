@@ -112,7 +112,7 @@ export default function SignUp() {
             Create your account
           </h2>
           <p className="mt-2 text-sm text-gray-600">
-            Already have an account?{" "} 
+            Already have an account?{" "}
             <Link
               to="/login"
               className="font-medium text-furniture hover:text-furniture-dark"
@@ -255,11 +255,10 @@ export default function SignUp() {
           </div>
 
           <div>
-            <Button
+            <button
               type="submit"
               fullWidth
-              variant="contained"
-              className="bg-furniture hover:bg-furniture-dark"
+              className="bg-furniture hover:bg-furniture-dark w-full text-white font-bold py-2 px-6 rounded-lg normal-case"
               size="large"
               startIcon={
                 isSubmitting ? (
@@ -268,20 +267,20 @@ export default function SignUp() {
               }
             >
               {isSubmitting ? "Creating Account..." : "Create Account"}
-            </Button>
+            </button>
           </div>
 
           <div className="text-center text-sm text-gray-600">
             <p>Or continue with</p>
             <div className="mt-2 flex justify-center space-x-4">
-              <Button variant="outlined" className="w-full max-w-[200px]">
+              <button className="w-full max-w-[200px] flex items-center justify-center gap-2 border border-furniture rounded-lg p-2 ">
                 <img
                   src="https://www.svgrepo.com/show/355037/google.svg"
-                  className="h-5 w-5 mr-2"
+                  className="h-5 w-5 mr-2 "
                   alt="Google"
                 />
                 Google
-              </Button>
+              </button>
             </div>
           </div>
         </form>

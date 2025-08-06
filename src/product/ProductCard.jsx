@@ -69,6 +69,7 @@ export function ProductCard({ product }) {
             transition: "transform 0.3s ease",
             "&:hover": {
               transform: "scale(1.05)",
+              borderRadius: "100px",
             },
           }}
         />
@@ -89,7 +90,7 @@ export function ProductCard({ product }) {
         )}
 
         {/* Quick Actions */}
-        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-2">
+        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center  justify-center space-x-2">
           <Link to={`/product/${product.id}`}>
             <Button size="icon" variant="secondary" className="shadow-lg">
               <Eye className="h-4 w-4" />
@@ -112,6 +113,7 @@ export function ProductCard({ product }) {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "flex-start",
+            flexDirection:"column",
             marginBottom: 8,
           }}
         >
@@ -121,8 +123,11 @@ export function ProductCard({ product }) {
           <div
             style={{
               display: "flex",
-              flexDirection: "column",
+              flexDirection: "row",
               alignItems: "flex-end",
+              justifyContent:"space-between",
+
+              marginBottom: "1rem",
             }}
           >
             <span style={{ fontWeight: 700, fontSize: "1.125rem" }}>
@@ -134,6 +139,7 @@ export function ProductCard({ product }) {
                   fontSize: "0.875rem",
                   color: "text.secondary",
                   textDecoration: "line-through",
+                  marginLeft: "5px",
                 }}
               >
                 ${product.originalPrice.toFixed(2)}
@@ -142,21 +148,9 @@ export function ProductCard({ product }) {
           </div>
         </div>
 
-        <p
-          style={{
-            color: "text.secondary",
-            fontSize: "0.875rem",
-            marginBottom: 16,
-            display: "-webkit-box",
-            WebkitLineClamp: 2,
-            WebkitBoxOrient: "vertical",
-            overflow: "hidden",
-          }}
-        >
-          {product.description}
-        </p>
+  
 
-        <CardActions sx={{ px: 0, justifyContent: "space-between" }}>
+        <CardActions sx={{ px: 0,alignItems:"flex-end",flexDirection:"column"}}>
           <Button
             component={Link}
             to={`/products/${product.id}`}
@@ -166,10 +160,8 @@ export function ProductCard({ product }) {
               textTransform: "none",
               color: "hsl(156,35%,35%)",
               transition: "all .8s ease",
-              "&:hover": {
-                backgroundColor: "hsl(156,35%,25%)",
-                color: "white",
-              },
+              alignSelf:"flex-start",
+              // margin:"5px 0"
             }}
           >
             View Details
@@ -182,8 +174,11 @@ export function ProductCard({ product }) {
               "&:hover": {
                 backgroundColor: "hsl(156,35%,25%)",
               },
+              // marginRight:"100px"
+             
             }}
             size="small"
+            className="w-full"
             onClick={handleAddToCart}
           >
             <ShoppingCart fontSize="" className="mr-2 text-xl" />

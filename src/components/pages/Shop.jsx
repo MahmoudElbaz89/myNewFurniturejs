@@ -85,16 +85,16 @@ export default function Shop() {
               InputProps={{
                 startAdornment: (
                   <SearchIcon className="text-muted-foreground h-4 w-4 mr-2" />
-                ),  
+                ),
                 sx: {
-                  '& .MuiOutlinedInput-root': {
-                    paddingLeft: '12px',
+                  "& .MuiOutlinedInput-root": {
+                    paddingLeft: "12px",
                   },
                 },
               }}
               sx={{
-                '& .  MuiOutlinedInput-root': {
-                  paddingLeft: '8px',
+                "& .  MuiOutlinedInput-root": {
+                  paddingLeft: "8px",
                 },
               }}
             />
@@ -137,29 +137,37 @@ export default function Shop() {
         {/* Category Pills */}
         <div className="flex flex-wrap gap-2 mb-8">
           <Button
-            variant={selectedCategory === "all" ? "contained" : "outlined"}
             onClick={() => handleCategoryChange("all")}
-            sx={{ borderRadius: '9999px', textTransform: 'none', mr: 1, mb: 1 }}
+            sx={{ borderRadius: "9999px", textTransform: "none", mr: 1, mb: 1 }}
+            style={{
+              backgroundColor:
+                selectedCategory === "all" ? "rgb(58,120,95)" : "white",
+              color: selectedCategory === "all" ? "white" : "black",
+              border: "1px solid gray",
+              hover: { backgroundColor: "rgb(238,213,196)" },
+            }}
           >
             All
           </Button>
           {categories.map((category) => (
             <Button
               key={category.name}
-              variant={
-                selectedCategory === category.name ? "contained" : "outlined"
-              }
+              style={{
+                backgroundColor:
+                  selectedCategory === category.name
+                    ? "rgb(58,120,95)"
+                    : "white",
+                color: selectedCategory === category.name ? "white" : "black",
+                border: "1px solid gray",
+              }}
               onClick={() => handleCategoryChange(category.name)}
               sx={{
-                borderRadius: '9999px',
-                textTransform: 'none',
+                borderRadius: "9999px",
+                textTransform: "none",
                 mr: 1,
                 mb: 1,
-                '&.MuiButton-contained': {
-                  backgroundColor: 'hsl(var(--furniture-green))',
-                  '&:hover': {
-                    backgroundColor: 'hsl(var(--furniture-green) / 0.9)',
-                  },
+                "&:hover": {
+                  backgroundColor: "rgb(238,213,196)",
                 },
               }}
             >

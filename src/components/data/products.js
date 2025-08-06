@@ -1,422 +1,547 @@
-// Importing images from assets
-import woodenChairImg from "../../assets/wooden-chair.jpg";
-import blueArmchairImg from "../../assets/blue-armchair.jpg";
-import diningTableImg from "../../assets/dining-table.jpg";
-import storageCabinetImg from "../../assets/storage-cabinet.jpg";
-import greySofaImg from "../../assets/grey-sofa.jpg";
-import platformBedImg from "../../assets/platform-bed.jpg";
+// products.js
 
-// Importing additional images from imgs directory
-import product25Img from "../../assets/imgs/imgi_11_product-25-500x500.webp";
-import product32Img from "../../assets/imgs/imgi_126_product-32.webp";
-import product30Img from "../../assets/imgs/imgi_132_product-30.webp";
-import product31Img from "../../assets/imgs/imgi_138_product-31.webp";
-import product29Img from "../../assets/imgs/imgi_144_product-29.webp";
-import product7Img from "../../assets/imgs/imgi_32_product-7.webp";
-import product10Img from "../../assets/imgs/imgi_7_product-10-500x500.webp";
-import product41Img from "../../assets/imgs/imgi_9_product-41-500x500.webp";
-import productBebendum from "../../assets/imgs/Bebendum Arcu.webp";
-import productDiam from "../../assets/imgs/Diam Vlutpat.webp";
-import productDolore from "../../assets/imgs/Dolore Magna.webp";
-import productAliquam from "../../assets/imgs/aliquam Blandit.webp";
-import productAugue from "../../assets/imgs/augue Mauris.webp";
-import productLacus from "../../assets/imgs/augue lacus.webp";
-import productCommodo from "../../assets/imgs/commodo amcorper.webp";
-import productSofa1 from "../../assets/imgs/imgi_159_360_F_1160921373_aPTocF0caQi0ym9rSe1wfPo9cIb37I9o.jpg";
-import productSofa2 from "../../assets/imgs/imgi_169_sofa-modern-full-size-fine-no-artifacts-21390098.jpg";
-import productBed1 from "../../assets/imgs/tarabiza.jpg";
-import productSofa3 from "../../assets/imgs/imgi_178_sofa-sectional-L8q9QmF-600.jpg";
-import productChair1 from "../../assets/imgs/imgi_204_linz-craft-chair-mone-034-chairs-78259351-34442773725335.jpg";
-import productSofa4 from "../../assets/imgs/imgi_208_Daniel%2BSofa%2BSide%2BAngle%2BNo%2BBackground.jpg";
-import productBed2 from "../../assets/imgs/imgi_218_two-different-styles-wooden-furniture-modern-design-modern-style-minimalist-appearance-colorful-design-bed-no-background-different-design-png-white-background-isolated-abstract-3d-model_789096-14371.jpg";
-
-// // Array of all available images
-// const allImages = [
-//     { id: "wooden-chair", img: woodenChairImg },
-//   { id: "blue-armchair", img: blueArmchairImg },
-//   { id: "dining-table", img: diningTableImg },
-//   { id: "storage-cabinet", img: storageCabinetImg },
-//   { id: "grey-sofa", img: greySofaImg },
-//   { id: "platform-bed", img: platformBedImg },
-
-//   { id: "product-25", img: product25Img },
-//   { id: "product-32", img: product32Img },
-//   { id: "product-30", img: product30Img },
-//   { id: "product-31", img: product31Img },
-//   { id: "product-29", img: product29Img },
-//   { id: "product-7", img: product7Img },
-//   { id: "product-10", img: product10Img },
-//   { id: "product-41", img: product41Img },
-//   { id: "bebendum", img: productBebendum },
-//   { id: "diam", img: productDiam },
-//   { id: "dolore", img: productDolore },
-//   { id: "aliquam", img: productAliquam },
-//   { id: "augue", img: productAugue },
-//   { id: "lacus", img: productLacus },
-//   { id: "commodo", img: productCommodo },
-
-//   { id: "sofa-1", img: productSofa1 },
-//   { id: "sofa-2", img: productSofa2 },
-//   { id: "bed-1", img: productBed1 },
-//   { id: "sofa-3", img: productSofa3 },
-//   { id: "chair-1", img: productChair1 },
-//   { id: "sofa-4", img: productSofa4 },
-//   { id: "bed-2", img: productBed2 },
-// ];
+// Import all product images from the assets directory
+import armedChair1 from "../../assets/imgs/armedChair (1).webp";
+import armedChair2 from "../../assets/imgs/armedChair (2).webp";
+import armedChair3 from "../../assets/imgs/armedChair (3).webp";
+import armedChair4 from "../../assets/imgs/armedChair (4).webp";
+import armedChair5 from "../../assets/imgs/armedChair (5).webp";
+import armedChair from "../../assets/imgs/armedChair.webp";
+import armedChair_2 from "../../assets/imgs/armedChair2.webp";
+import armedChair_3 from "../../assets/imgs/armedChair3.jpg";
+import bed1 from "../../assets/imgs/bed.webp";
+import bed2 from "../../assets/imgs/bed2.webp";
+import bed3 from "../../assets/imgs/bed3.webp";
+import bed4 from "../../assets/imgs/bed4.webp";
+import bed5 from "../../assets/imgs/bed5.webp";
+import bed6 from "../../assets/imgs/bed6.webp";
+import bed7 from "../../assets/imgs/bed7.webp";
+import chair1 from "../../assets/imgs/chair (1).webp";
+import chair2 from "../../assets/imgs/chair (2).webp";
+import chair3 from "../../assets/imgs/chair (3).webp";
+import chair from "../../assets/imgs/chair.jpg";
+import sofa1 from "../../assets/imgs/sofa (1).webp";
+import sofa2 from "../../assets/imgs/sofa (2).webp";
+import sofa3 from "../../assets/imgs/sofa (3).webp";
+import sofa4 from "../../assets/imgs/sofa (4).webp";
+import sofa5 from "../../assets/imgs/sofa (5).webp";
+import sofa6 from "../../assets/imgs/sofa (6).webp";
+import sofa from "../../assets/imgs/sofa.jpg";
+import sofa_2 from "../../assets/imgs/sofa2.jpg";
+import sofa_3 from "../../assets/imgs/sofa3.jpg";
+import sofa_4 from "../../assets/imgs/sofa4.jpg";
+import storage1 from "../../assets/imgs/storage.jpg";
+import storage2 from "../../assets/imgs/storage2.jpg";
+import storage3 from "../../assets/imgs/storage3.jpg";
+import storage4 from "../../assets/imgs/storage4.webp";
+import storage5 from "../../assets/imgs/storage5.jpg";
+import storage6 from "../../assets/imgs/storage6.webp";
+import table1 from "../../assets/imgs/table (1).webp";
+import table2 from "../../assets/imgs/table (2).webp";
+import table from "../../assets/imgs/table.webp";
+import table_2 from "../../assets/imgs/table2.webp";
+import table_3 from "../../assets/imgs/table3.webp";
+import diamVlutpat from "../../assets/imgs/Diam Vlutpat.webp";
 
 export const products = [
+  // Armchairs
   {
     id: "1",
-    name: "Wooden Chair",
-    price: 149.99,
-    originalPrice: 199.99,
-    image: woodenChairImg,
-    category: "Chairs",
+    name: "Classic Armed Chair",
+    price: 299.99,
+    image: armedChair,
+    category: "Armchairs",
     description:
-      "Elegant wooden chair with modern design and comfortable seating.",
+      "A timeless armed chair with classic design and plush cushioning.",
     inStock: true,
-    featured: true,
-    rating: 4.8,
-    reviews: 124,
+    rating: 4.7,
+    reviews: 112,
   },
   {
     id: "2",
-    name: "Pretium Elite",
+    name: "Modern Armed Chair",
     price: 349.99,
-    originalPrice: 449.99,
-    image: blueArmchairImg,
+    image: armedChair1,
     category: "Armchairs",
-    description: "Premium blue velvet armchair with exceptional comfort.",
+    description: "Sleek and modern armed chair, a perfect accent for any room.",
     inStock: true,
-    featured: true,
-    rating: 4.9,
-    reviews: 89,
-  },
-  {
-    id: "3",
-    name: "Aliquam Dining Table",
-    price: 599.99,
-    image: diningTableImg,
-    category: "Tables",
-    description: "Modern dining table perfect for contemporary homes.",
-    inStock: true,
-    featured: false,
-    rating: 4.7,
-    reviews: 67,
-  },
-  {
-    id: "4",
-    name: "Storage Elite",
-    price: 279.99,
-    image: storageCabinetImg,
-    category: "Storage",
-    description: "Spacious storage cabinet with sleek design.",
-    inStock: true,
-    rating: 4.5,
-    reviews: 42,
-  },
-  {
-    id: "5",
-    name: "Contemporary Sofa",
-    price: 899.99,
-    originalPrice: 1099.99,
-    image: greySofaImg,
-    category: "Sofas",
-    description: "Comfortable grey sofa for modern living spaces.",
-    inStock: true,
-    featured: true,
-    rating: 4.9,
-    reviews: 156,
-  },
-  {
-    id: "6",
-    name: "Platform Bed",
-    price: 749.99,
-    image: platformBedImg,
-    category: "Beds",
-    description: "Minimalist platform bed with natural wood finish.",
-    inStock: true,
-    rating: 4.6,
-    reviews: 78,
-  },
-  {
-    id: "7",
-    name: "Ergonomic Office Chair",
-    price: 229.99,
-    originalPrice: 299.99,
-    image: product25Img,
-    category: "Chairs",
-    description:
-      "Adjustable office chair with lumbar support and breathable mesh.",
-    inStock: true,
-    rating: 4.7,
-    reviews: 215,
-  },
-  {
-    id: "8",
-    name: "Leather Recliner",
-    price: 499.99,
-    image: product7Img,
-    category: "Armchairs",
-    description: "Luxurious leather recliner with smooth rocking motion.",
-    inStock: true,
-    featured: true,
     rating: 4.8,
-    reviews: 167,
-  },
-  {
-    id: "9",
-    name: "Coffee Table",
-    price: 199.99,
-    originalPrice: 249.99,
-    image: product32Img,
-    category: "Tables",
-    description: "Modern coffee table with tempered glass top.",
-    inStock: true,
-    rating: 4.4,
-    reviews: 89,
-  },
-  {
-    id: "10",
-    name: "Bookshelf",
-    price: 179.99,
-    image: product30Img,
-    category: "Storage",
-    description: "5-tier bookshelf with adjustable shelves.",
-    inStock: true,
-    rating: 4.6,
-    reviews: 132,
-  },
-  {
-    id: "11",
-    name: "Sectional Sofa",
-    price: 1299.99,
-    originalPrice: 1599.99,
-    image: product31Img,
-    category: "Sofas",
-    description: "L-shaped sectional with chaise and storage ottoman.",
-    inStock: true,
-    featured: true,
-    rating: 4.9,
-    reviews: 203,
-  },
-  {
-    id: "12",
-    name: "Canopy Bed",
-    price: 899.99,
-    image: product29Img,
-    category: "Beds",
-    description: "Elegant canopy bed with sheer drapes.",
-    inStock: true,
-    rating: 4.7,
-    reviews: 94,
-  },
-  {
-    id: "13",
-    name: "Bar Stool",
-    price: 89.99,
-    image: product10Img,
-    category: "Chairs",
-    description: "Adjustable height bar stool with back support.",
-    inStock: true,
-    rating: 4.3,
-    reviews: 156,
-  },
-  {
-    id: "14",
-    name: "Accent Chair",
-    price: 179.99,
-    originalPrice: 229.99,
-    image: product41Img,
-    category: "Armchairs",
-    description: "Mid-century modern accent chair in vibrant colors.",
-    inStock: true,
-    rating: 4.5,
-    reviews: 112,
-  },
-  {
-    id: "15",
-    name: "Console Table",
-    price: 249.99,
-    image: productBebendum,
-    category: "Tables",
-    description: "Slim console table with two drawers.",
-    inStock: true,
-    rating: 4.6,
-    reviews: 87,
-  },
-  {
-    id: "16",
-    name: "TV Stand",
-    price: 199.99,
-    originalPrice: 279.99,
-    image: productDiam,
-    category: "Storage",
-    description: "Modern TV stand with cable management.",
-    inStock: true,
-    rating: 4.4,
-    reviews: 134,
-  },
-  {
-    id: "17",
-    name: "Dresser",
-    price: 349.99,
-    originalPrice: 429.99,
-    image: productDolore,
-    category: "Storage",
-    description: "6-drawer dresser with smooth gliding drawers.",
-    inStock: true,
-    rating: 4.5,
     reviews: 98,
   },
   {
-    id: "18",
-    name: "Sleeper Sofa",
-    price: 849.99,
-    image: productAliquam,
-    category: "Sofas",
-    description: "Convertible sofa bed with memory foam mattress.",
+    id: "3",
+    name: "Vintage Armed Chair",
+    price: 279.99,
+    image: armedChair2,
+    category: "Armchairs",
+    description: "Vintage-inspired armed chair with detailed woodwork.",
     inStock: true,
     rating: 4.6,
-    reviews: 142,
+    reviews: 75,
+  },
+  {
+    id: "4",
+    name: "Comfort Armed Chair",
+    price: 399.99,
+    image: armedChair3,
+    category: "Armchairs",
+    description:
+      "An exceptionally comfortable armed chair designed for relaxation.",
+    inStock: true,
+    featured: true,
+    rating: 4.9,
+    reviews: 150,
+  },
+  {
+    id: "5",
+    name: "Minimalist Armed Chair",
+    price: 259.99,
+    image: armedChair4,
+    category: "Armchairs",
+    description:
+      "A minimalist armed chair with clean lines and a simple profile.",
+    inStock: true,
+    rating: 4.5,
+    reviews: 65,
+  },
+  {
+    id: "6",
+    name: "Lounge Armed Chair",
+    price: 429.99,
+    image: armedChair5,
+    category: "Armchairs",
+    description:
+      "A luxurious lounge armed chair, perfect for reading or relaxing.",
+    inStock: true,
+    rating: 4.8,
+    reviews: 120,
+  },
+  {
+    id: "7",
+    name: "Compact Armed Chair",
+    price: 229.99,
+    image: armedChair_2,
+    category: "Armchairs",
+    description:
+      "A compact armed chair ideal for smaller spaces without compromising comfort.",
+    inStock: true,
+    rating: 4.4,
+    reviews: 55,
+  },
+  {
+    id: "8",
+    name: "Executive Armed Chair",
+    price: 499.99,
+    image: armedChair_3,
+    category: "Armchairs",
+    description:
+      "An executive armed chair offering both style and ergonomic support.",
+    inStock: true,
+    rating: 4.7,
+    reviews: 90,
+  },
+
+  // Beds
+  {
+    id: "9",
+    name: "Queen Platform Bed",
+    price: 699.99,
+    image: bed1,
+    category: "Beds",
+    description:
+      "A sturdy queen-size platform bed with a modern, low-profile design.",
+    inStock: true,
+    featured: true,
+    rating: 4.8,
+    reviews: 210,
+  },
+  {
+    id: "10",
+    name: "King Upholstered Bed",
+    price: 899.99,
+    image: bed2,
+    category: "Beds",
+    description: "Luxurious king-size upholstered bed with a tufted headboard.",
+    inStock: true,
+    rating: 4.9,
+    reviews: 180,
+  },
+  {
+    id: "11",
+    name: "Twin Storage Bed",
+    price: 499.99,
+    image: bed3,
+    category: "Beds",
+    description:
+      "A practical twin bed with built-in drawers for extra storage.",
+    inStock: true,
+    rating: 4.6,
+    reviews: 130,
+  },
+  {
+    id: "12",
+    name: "Modern Canopy Bed",
+    price: 799.99,
+    image: bed4,
+    category: "Beds",
+    description: "An elegant and modern canopy bed that makes a statement.",
+    inStock: true,
+    rating: 4.7,
+    reviews: 145,
+  },
+  {
+    id: "13",
+    name: "Simple Metal Frame Bed",
+    price: 349.99,
+    image: bed5,
+    category: "Beds",
+    description:
+      "A simple and durable metal frame bed with a minimalist aesthetic.",
+    inStock: true,
+    rating: 4.5,
+    reviews: 160,
+  },
+  {
+    id: "14",
+    name: "Rustic Wooden Bed",
+    price: 749.99,
+    image: bed6,
+    category: "Beds",
+    description:
+      "A rustic wooden bed frame that adds warmth and character to any bedroom.",
+    inStock: true,
+    rating: 4.8,
+    reviews: 195,
+  },
+  {
+    id: "15",
+    name: "Daybed with Trundle",
+    price: 599.99,
+    image: bed7,
+    category: "Beds",
+    description:
+      "A versatile daybed with a pull-out trundle, perfect for guests.",
+    inStock: true,
+    rating: 4.6,
+    reviews: 110,
+  },
+
+  // Chairs
+  {
+    id: "16",
+    name: "Ergonomic Office Chair",
+    price: 249.99,
+    image: chair,
+    category: "Chairs",
+    description:
+      "An ergonomic office chair designed for maximum comfort and support.",
+    inStock: true,
+    rating: 4.8,
+    reviews: 300,
+  },
+  {
+    id: "17",
+    name: "Modern Dining Chair",
+    price: 129.99,
+    image: chair1,
+    category: "Chairs",
+    description: "A sleek dining chair with a comfortable, contoured seat.",
+    inStock: true,
+    rating: 4.7,
+    reviews: 250,
+  },
+  {
+    id: "18",
+    name: "Accent Velvet Chair",
+    price: 199.99,
+    image: chair2,
+    category: "Chairs",
+    description:
+      "A luxurious velvet accent chair to add a pop of color and style.",
+    inStock: true,
+    featured: true,
+    rating: 4.9,
+    reviews: 180,
   },
   {
     id: "19",
-    name: "Nightstand",
-    price: 129.99,
-    originalPrice: 159.99,
-    image: productAugue,
-    category: "Storage",
-    description: "Modern nightstand with charging station.",
+    name: "Wooden Cafe Chair",
+    price: 99.99,
+    image: chair3,
+    category: "Chairs",
+    description:
+      "A classic wooden cafe chair, durable and stylish for any setting.",
     inStock: true,
-    rating: 4.3,
-    reviews: 87,
+    rating: 4.6,
+    reviews: 220,
   },
+
+  // Sofas
   {
     id: "20",
-    name: "Dining Chair Set",
-    price: 399.99,
-    image: productLacus,
-    category: "Chairs",
-    description: "Set of 4 upholstered dining chairs.",
+    name: "3-Seater Modern Sofa",
+    price: 999.99,
+    image: sofa,
+    category: "Sofas",
+    description:
+      "A spacious and comfortable 3-seater sofa with a modern design.",
     inStock: true,
     featured: true,
-    rating: 4.7,
-    reviews: 156,
+    rating: 4.8,
+    reviews: 280,
   },
   {
     id: "21",
-    name: "Loveseat",
-    price: 599.99,
-    originalPrice: 749.99,
-    image: productCommodo,
+    name: "Sectional Sofa with Chaise",
+    price: 1499.99,
+    image: sofa1,
     category: "Sofas",
-    description: "Compact two-seater sofa with reversible chaise.",
+    description:
+      "A large sectional sofa with a reversible chaise for ultimate flexibility.",
     inStock: true,
-    rating: 4.6,
-    reviews: 112,
+    rating: 4.9,
+    reviews: 230,
   },
   {
     id: "22",
-    name: "Desk",
-    price: 249.99,
-    image: product7Img,
-    category: "Tables",
-    description: "Home office desk with cable management.",
+    name: "Leather Loveseat",
+    price: 899.99,
+    image: sofa2,
+    category: "Sofas",
+    description:
+      "A sophisticated leather loveseat, perfect for smaller living areas.",
     inStock: true,
-    rating: 4.6,
-    reviews: 92,
+    rating: 4.7,
+    reviews: 190,
   },
   {
     id: "23",
-    name: "Ottoman",
-    price: 149.99,
-    image: productDolore,
-    category: "Armchairs",
-    description: "Versatile storage ottoman with tufted top.",
+    name: "Sleeper Sofa Bed",
+    price: 1199.99,
+    image: sofa3,
+    category: "Sofas",
+    description:
+      "A functional and stylish sleeper sofa that easily converts to a bed.",
     inStock: true,
-    rating: 4.3,
-    reviews: 64,
+    rating: 4.6,
+    reviews: 160,
   },
   {
     id: "24",
-    name: "Bar Cabinet",
-    price: 329.99,
-    originalPrice: 399.99,
-    image: productAliquam,
-    category: "Storage",
-    description: "Modern bar cabinet with glass doors and shelves.",
+    name: "Mid-Century Modern Sofa",
+    price: 1099.99,
+    image: sofa4,
+    category: "Sofas",
+    description:
+      "A mid-century modern sofa with iconic tapered legs and clean lines.",
     inStock: true,
-    rating: 4.7,
-    reviews: 38,
+    rating: 4.8,
+    reviews: 210,
   },
   {
     id: "25",
-    name: "Accent Table",
-    price: 159.99,
-    image: productAugue,
-    category: "Tables",
-    description: "Nesting accent tables, set of 2.",
+    name: "Compact Apartment Sofa",
+    price: 799.99,
+    image: sofa5,
+    category: "Sofas",
+    description:
+      "A stylish sofa designed specifically for compact apartment living.",
     inStock: true,
-    rating: 4.4,
-    reviews: 27,
+    rating: 4.5,
+    reviews: 140,
   },
   {
     id: "26",
-    name: "Chaise Lounge",
-    price: 429.99,
-    image: productLacus,
-    category: "Armchairs",
-    description: "Upholstered chaise lounge with wooden legs.",
+    name: "Plush Velvet Sofa",
+    price: 1299.99,
+    image: sofa6,
+    category: "Sofas",
+    description: "A luxurious and plush velvet sofa that is soft to the touch.",
     inStock: true,
-    rating: 4.8,
-    reviews: 51,
+    rating: 4.9,
+    reviews: 170,
   },
   {
     id: "27",
-    name: "Shoe Cabinet",
-    price: 179.99,
-    image: productCommodo,
-    category: "Storage",
-    description: "Slim shoe cabinet with multiple compartments.",
+    name: "Reclining Sofa",
+    price: 1599.99,
+    image: sofa_2,
+    category: "Sofas",
+    description:
+      "A comfortable reclining sofa with dual power-reclining seats.",
     inStock: true,
-    rating: 4.5,
-    reviews: 73,
+    rating: 4.7,
+    reviews: 200,
   },
   {
     id: "28",
-    name: "Bar Cart",
-    price: 199.99,
-    originalPrice: 249.99,
-    image: productDiam,
-    category: "Storage",
-    description: "Mobile bar cart with glass shelves.",
+    name: "Chesterfield Sofa",
+    price: 1799.99,
+    image: sofa_3,
+    category: "Sofas",
+    description:
+      "A classic Chesterfield sofa with deep button tufting and rolled arms.",
     inStock: true,
-    rating: 4.6,
-    reviews: 42,
+    rating: 4.8,
+    reviews: 150,
   },
   {
     id: "29",
-    name: "Vanity Table",
-    price: 279.99,
-    image: productBebendum,
-    category: "Storage",
-    description: "Dressing table with mirror and stool.",
+    name: "Outdoor Wicker Sofa",
+    price: 949.99,
+    image: sofa_4,
+    category: "Sofas",
+    description:
+      "A durable and stylish outdoor sofa made from all-weather wicker.",
     inStock: true,
-    rating: 4.7,
-    reviews: 36,
+    rating: 4.6,
+    reviews: 120,
   },
+
+  // Storage
   {
     id: "30",
-    name: "Lift-Top Coffee Table",
-    price: 349.99,
-    image: productDolore,
+    name: "5-Drawer Dresser",
+    price: 449.99,
+    image: storage1,
+    category: "Storage",
+    description:
+      "A tall 5-drawer dresser offering ample storage for your clothing.",
+    inStock: true,
+    rating: 4.7,
+    reviews: 130,
+  },
+  {
+    id: "31",
+    name: "Modern Bookshelf",
+    price: 299.99,
+    image: storage2,
+    category: "Storage",
+    description: "A modern bookshelf with an open design and multiple shelves.",
+    inStock: true,
+    rating: 4.8,
+    reviews: 180,
+  },
+  {
+    id: "32",
+    name: "Entryway Cabinet",
+    price: 229.99,
+    image: storage3,
+    category: "Storage",
+    description:
+      "A slim entryway cabinet, perfect for storing shoes and accessories.",
+    inStock: true,
+    rating: 4.6,
+    reviews: 110,
+  },
+  {
+    id: "33",
+    name: "Bedside Nightstand",
+    price: 149.99,
+    image: storage4,
+    category: "Storage",
+    description:
+      "A compact bedside nightstand with a drawer and an open shelf.",
+    inStock: true,
+    rating: 4.5,
+    reviews: 200,
+  },
+  {
+    id: "34",
+    name: "Kitchen Pantry",
+    price: 599.99,
+    image: storage5,
+    category: "Storage",
+    description:
+      "A spacious kitchen pantry cabinet for all your food storage needs.",
+    inStock: true,
+    rating: 4.7,
+    reviews: 150,
+  },
+  {
+    id: "35",
+    name: "Small Storage Ottoman",
+    price: 99.99,
+    image: storage6,
+    category: "Storage",
+    description:
+      "A versatile ottoman that provides extra seating and hidden storage.",
+    inStock: true,
+    rating: 4.8,
+    reviews: 220,
+  },
+
+  // Tables
+  {
+    id: "36",
+    name: "Expandable Dining Table",
+    price: 799.99,
+    image: table,
     category: "Tables",
-    description: "Convertible coffee table with lift-top mechanism.",
+    description:
+      "An expandable dining table that can comfortably seat up to 8 people.",
     inStock: true,
     featured: true,
+    rating: 4.9,
+    reviews: 190,
+  },
+  {
+    id: "37",
+    name: "Round Coffee Table",
+    price: 349.99,
+    image: table1,
+    category: "Tables",
+    description:
+      "A stylish round coffee table with a marble top and metal base.",
+    inStock: true,
     rating: 4.8,
-    reviews: 58,
+    reviews: 160,
+  },
+  {
+    id: "38",
+    name: "Console Table",
+    price: 279.99,
+    image: table2,
+    category: "Tables",
+    description: "A narrow console table, perfect for hallways and entryways.",
+    inStock: true,
+    rating: 4.7,
+    reviews: 140,
+  },
+  {
+    id: "39",
+    name: "Minimalist Desk",
+    price: 299.99,
+    image: table_2,
+    category: "Tables",
+    description:
+      "A minimalist writing desk with a clean design and ample workspace.",
+    inStock: true,
+    rating: 4.6,
+    reviews: 170,
+  },
+  {
+    id: "40",
+    name: "Nesting End Tables",
+    price: 199.99,
+    image: table_3,
+    category: "Tables",
+    description:
+      "A set of two nesting end tables that save space and add style.",
+    inStock: true,
+    rating: 4.5,
+    reviews: 130,
+  },
+  {
+    id: "41",
+    name: "Diam Vlutpat Table",
+    price: 459.99,
+    image: diamVlutpat,
+    category: "Tables",
+    description: "An elegant table featuring a unique 'Diam Vlutpat' design.",
+    inStock: true,
+    rating: 4.8,
+    reviews: 95,
   },
 ];
 
@@ -427,5 +552,4 @@ export const categories = [
   { name: "Sofas", icon: "Sofa" },
   { name: "Beds", icon: "Bed" },
   { name: "Tables", icon: "Table" },
-  
 ];

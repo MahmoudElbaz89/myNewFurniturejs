@@ -18,19 +18,28 @@ export default {
       },
     },
     extend: {
-      colors: {
-        furniture: {
-          DEFAULT: "hsl(156,35%,35%)",
-          light: "hsl(156,35%,45%)",
-          dark: "hsl(156,35%,25%)",
-          green: "hsl(156,35%,35%)",
-          "green-light": "hsl(156,35%,45%)",
-          cream: "hsl(35,25%,90%)",
-          warm: "hsl(25,55%,85%)",
-          foreground: "hsl(0,0%,98%)",
-          wood: "hsl(var(--furniture-wood, 30, 20%, 20%))",
-          "wood-dark": "hsl(var(--furniture-wood-dark, 30, 20%, 15%))",
-        },
+       colors: {
+    // Move these out of the furniture object and prefix with furniture-
+    "furniture": "rgb(58, 120, 95)", // bg-furniture
+    "furniture-light": "rgb(73, 152, 120)", // bg-furniture-light
+    "furniture-dark": "rgb(44, 91, 72)", // bg-furniture-dark
+    "furniture-green": "rgb(58, 120, 95)", // bg-furniture-green
+    "furniture-greenLight": "rgb(73, 152, 120)", // bg-furniture-greenLight
+    "furniture-cream": "rgb(236, 232, 224)", // bg-furniture-cream
+    "furniture-warm": "rgb(238,213,196)", // bg-furniture-warm
+    "furniture-foreground": "rgb(250, 250, 250)", // bg-furniture-foreground
+    "furniture-white": "rgb(255, 255, 255)", // bg-furniture-white
+    "furniture-wood": "rgb(61, 51, 41)", // bg-furniture-wood
+    "furniture-woodDark": "rgb(46, 38, 31)", // bg-furniture-woodDark
+    "furniture-bgColor": "rgb(248, 248, 246)", // bg-furniture-bgColor
+    "furniture-main": "rgb(58, 120, 95)", // bg-furniture-main
+    "furniture-secondary": "rgb(236, 219, 206)", // bg-furniture-secondary
+    "furniture-section": "rgb(242, 240, 237)", // bg-furniture-section
+    "furniture-text": "rgb(44, 38, 33)", // text-furniture-text
+    "furniture-textSecondary": "rgb(149, 140, 131)", // text-furniture-textSecondary
+    "furniture-greenLight": "rgb(207, 226, 216)", // bg-furniture-greenLight
+    
+  
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

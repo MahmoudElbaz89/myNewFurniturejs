@@ -34,18 +34,15 @@ export default function Cart() {
   if (cart.length === 0) {
     return (
       <div className="min-h-screen bg-white">
-        <div className="py-16 text-center bg-gradient-to-r from-orange-50 to-amber-50">
+        <div className="py-16 text-center bg-gradient-to-r from-furniture-cream to-furniture-warm">
           <Container maxWidth="lg">
             <h1 className="text-4xl font-bold mb-4">Shopping Cart</h1>
             <p className="text-gray-600">Your cart is empty</p>
             <div className="mt-8">
               <Link to="/shop">
-                <Button
-                  variant="contained"
-                  className="bg-furniture-green hover:bg-furniture-green/90 text-white font-bold py-2 px-6 rounded-lg normal-case"
-                >
+                <button className="bg-furniture-green hover:scale-105 transition-all duration-300 text-white font-bold py-2 px-6 rounded-lg normal-case">
                   Continue Shopping
-                </Button>
+                </button>
               </Link>
             </div>
           </Container>
@@ -72,12 +69,12 @@ export default function Cart() {
           <div className="lg:w-2/3">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-2xl font-semibold">Cart Items</h2>
-              <Button
+              <button
                 onClick={handleClearCart}
                 className="text-red-600 hover:bg-red-50 px-3 py-1 rounded-md text-sm font-medium normal-case"
               >
                 Clear Cart
-              </Button>
+              </button>
             </div>
 
             <div className="space-y-6">
@@ -89,11 +86,11 @@ export default function Cart() {
                   <div className="p-6">
                     <div className="flex flex-col md:flex-row gap-6">
                       {/* Product Image */}
-                      <div className="md:w-1/3">
+                      <div className="">
                         <img
                           src={item.product.image}
                           alt={item.product.name}
-                          className="w-full h-48 object-cover rounded-lg"
+                          className="w-[130px] h-[130px] object-cover rounded-lg"
                         />
                       </div>
 
@@ -156,11 +153,11 @@ export default function Cart() {
                           </div>
 
                           <div className="text-right">
-                            <p className="text-lg font-semibold">
+                            <p className="text-lg font-semibold text-furniture-green">
                               ${(item.product.price * item.quantity).toFixed(2)}
                             </p>
                             {item.quantity > 1 && (
-                              <p className="text-sm text-gray-500">
+                              <p className="text-sm text-gray-500 ">
                                 ${item.product.price} each
                               </p>
                             )}
@@ -191,29 +188,23 @@ export default function Cart() {
                 <div className="border-t border-gray-200 my-4"></div>
                 <div className="flex justify-between text-lg font-semibold">
                   <span>Total</span>
-                  <span>${(getCartTotal() * 1.1).toFixed(2)}</span>
+                  <span className="text-furniture-green">
+                    ${(getCartTotal() * 1.1).toFixed(2)}
+                  </span>
                 </div>
               </div>
 
               <div className="mt-8 space-y-4">
-                <Link to="/checkout" className="block">
-                  <Button
-                    fullWidth
-                    variant="contained"
-                    className="bg-furniture hover:bg-furniture-green/90 text-white font-bold py-3 rounded-lg normal-case"
-                  >
+                <Link to="/login?redirect=/checkout" className="block">
+                  <button className="bg-furniture-green hover:scale-105 transition-all duration-300 text-white font-bold py-2 w-full rounded-lg normal-case">
                     Proceed to Checkout
-                  </Button>
+                  </button>
                 </Link>
 
                 <Link to="/shop" className="block">
-                  <Button
-                    fullWidth
-                    variant="outlined"
-                    className="border-furniture text-furniture-green hover:bg-furniture-green/5 font-medium py-3 rounded-lg normal-case"
-                  >
+                  <button className="color hover:bg-furniture-warm transition-all duration-300 text-black font-bold py-2 w-full rounded-lg normal-case">
                     Continue Shopping
-                  </Button>
+                  </button>
                 </Link>
               </div>
             </div>
