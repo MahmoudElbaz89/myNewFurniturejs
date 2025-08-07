@@ -41,7 +41,7 @@ export default function Footer() {
                         <ul className="space-y-2">
                             <li>
                                 <Link
-                                    to="/"
+                                    to="/#"
                                     className="text-gray-500 hover:text-furniture-green transition-colors"
                                 >
                                     Home

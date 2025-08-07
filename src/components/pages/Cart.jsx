@@ -33,23 +33,17 @@ export default function Cart() {
 
     if (cart.length === 0) {
         return (
-            <div className="min-h-screen bg-white">
-                <div className="py-16 text-center bg-gradient-to-r from-furniture-cream to-furniture-warm">
-                    <Container maxWidth="lg">
-                        <h1 className="text-4xl font-bold mb-4">
-                            Shopping Cart
-                        </h1>
-                        <p className="text-gray-600">Your cart is empty</p>
-                        <div className="mt-8">
-                            <Link to="/shop">
-                                <button className="bg-furniture-green hover:scale-105 transition-all duration-300 text-white font-bold py-2 px-6 rounded-lg normal-case">
-                                    Continue Shopping
-                                </button>
-                            </Link>
-                        </div>
-                    </Container>
+                <div className="h-96 py-16 flex flex-col justify-center items-center  bg-gradient-to-r from-furniture-cream to-furniture-warm">
+                    <h1 className="text-4xl font-bold mb-4">Shopping Cart</h1>
+                    <p className="text-gray-600">Your cart is empty</p>
+                    <div className="mt-8">
+                        <Link to="/shop">
+                            <button className="bg-furniture-green hover:scale-105 transition-all duration-300 text-white font-bold py-2 px-6 rounded-lg normal-case">
+                                Continue Shopping
+                            </button>
+                        </Link>
+                    </div>
                 </div>
-            </div>
         );
     }
 
@@ -175,7 +169,9 @@ export default function Cart() {
 
                                                     <div className="text-right">
                                                         <p className="text-lg font-semibold text-furniture-green">
-                                                            $
+                                                            <span className="text-sm">
+                                                          EGP&nbsp;
+                                                      </span>
                                                             {(
                                                                 item.product
                                                                     .price *
@@ -184,7 +180,9 @@ export default function Cart() {
                                                         </p>
                                                         {item.quantity > 1 && (
                                                             <p className="text-sm text-gray-500 ">
-                                                                $
+                                                                <span className="text-sm">
+                                                          EGP&nbsp;
+                                                      </span>
                                                                 {
                                                                     item.product
                                                                         .price
@@ -214,7 +212,9 @@ export default function Cart() {
                                     <span className="text-gray-600">
                                         Subtotal
                                     </span>
-                                    <span>${getCartTotal().toFixed(2)}</span>
+                                    <span><span className="text-sm">
+                                                          EGP&nbsp;
+                                                      </span>{getCartTotal().toFixed(2)}</span>
                                 </div>
                                 <div className="flex justify-between">
                                     <span className="text-gray-600">
@@ -226,7 +226,9 @@ export default function Cart() {
                                 <div className="flex justify-between text-lg font-semibold">
                                     <span>Total</span>
                                     <span className="text-furniture-green">
-                                        ${(getCartTotal() * 1.1).toFixed(2)}
+                                        <span className="text-sm">
+                                                          EGP&nbsp;
+                                                      </span>{(getCartTotal() * 1.1).toFixed(2)}
                                     </span>
                                 </div>
                             </div>

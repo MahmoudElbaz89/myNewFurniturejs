@@ -123,7 +123,7 @@ export default function Login() {
             Or{" "}
             <Link
               to="/signup"
-              className="font-medium text-furniture hover:text-furniture-dark"
+              className="font-bold underline text-furniture hover:text-furniture-dark"
             >
               create a new account
             </Link>
@@ -184,14 +184,14 @@ export default function Login() {
               }
               label="Remember me"
             />
-            <div className="text-sm">
+            {/* <div className="text-sm">
               <Link
                 to="/forgot-password"
                 className="font-medium text-furniture hover:text-furniture-dark"
               >
                 Forgot your password?
               </Link>
-            </div>
+            </div> */}
           </div>
 
           <div>
