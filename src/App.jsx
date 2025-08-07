@@ -1,6 +1,5 @@
 import { Snackbar } from "@mui/material";
 import { Alert } from "@mui/material";
-import { Tooltip } from "@mui/material";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { CartProvider } from "./contexts/CartContext";
@@ -14,7 +13,8 @@ import Contact from "./components/pages/Contact";
 import NotFound from "./components/pages/NotFound";
 import Login from "./components/pages/Login";
 import SignUp from "./components/pages/SignUp";
-import Checkout from "./components/pages/Checkout";
+import Checkout from "./components/pages/ShippingInfo";
+import ProductDetails from "./components/pages/ProductDetails";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import { Toaster } from "sonner";
@@ -29,11 +29,7 @@ const App = () => (
     <Router>
       <Elements stripe={stripePromise}>
         <Toaster richColors />
-        <Tooltip>
           <CartProvider>
-            <Snackbar>
-              <Alert />
-            </Snackbar>
             <div className="min-h-screen flex flex-col bg-color">
               <Header />
               <main className="flex-1">
@@ -46,15 +42,17 @@ const App = () => (
                   <Route path="/login" element={<Login />} />
                   <Route path="/signup" element={<SignUp />} />
                   <Route path="/checkout" element={<Checkout />} />
-
+                  <Route path="/products/:id" element={<ProductDetails />} />
                   {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </main>
               <Footer />
             </div>
+            <Snackbar>
+              <Alert />
+            </Snackbar>
           </CartProvider>
-        </Tooltip>
       </Elements>
     </Router>
   </QueryClientProvider>

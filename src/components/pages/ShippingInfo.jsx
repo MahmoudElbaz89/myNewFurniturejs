@@ -42,7 +42,6 @@ const Checkout = () => {
     address: "",
     city: "",
     postalCode: "",
-    country: "",
   });
   const [orderComplete, setOrderComplete] = useState(false);
   const navigate = useNavigate();
@@ -81,16 +80,6 @@ const Checkout = () => {
     const createPaymentIntent = async () => {
       try {
         setIsLoading(true);
-        // In a real app, you would create a payment intent on your server
-        // const response = await fetch('/create-payment-intent', {
-        //   method: 'POST',
-        //   headers: { 'Content-Type': 'application/json' },
-        //   body: JSON.stringify({
-        //     items: cartItems,
-        //     total: getCartTotal()
-        //   })
-        // });
-        // const { clientSecret } = await response.json();
 
         // For demo, we'll just set a dummy secret
         setClientSecret("dummy_client_secret_for_demo");
@@ -383,35 +372,7 @@ const Checkout = () => {
                           />
                         </div>
                       </div>
-                      <div>
-                        <label
-                          htmlFor="country"
-                          className="block text-sm font-medium text-gray-700 mb-1"
-                        >
-                          Country *
-                        </label>
-                        <select
-                          id="country"
-                          required
-                          value={shippingInfo.country}
-                          onChange={(e) =>
-                            setShippingInfo({
-                              ...shippingInfo,
-                              country: e.target.value,
-                            })
-                          }
-                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-furniture-green focus:border-furniture-green"
-                        >
-                          <option value="">Select a country</option>
-                          <option value="US">United States</option>
-                          <option value="CA">Canada</option>
-                          <option value="UK">United Kingdom</option>
-                          <option value="AU">Australia</option>
-                          <option value="DE">Germany</option>
-                          <option value="FR">France</option>
-                          <option value="JP">Japan</option>
-                        </select>
-                      </div>
+                      
                     </div>
                   </div>
 

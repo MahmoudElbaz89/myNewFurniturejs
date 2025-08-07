@@ -1,5 +1,3 @@
-// products.js
-
 // Import all product images from the assets directory
 import armedChair1 from "../../assets/imgs/armedChair (1).webp";
 import armedChair2 from "../../assets/imgs/armedChair (2).webp";
@@ -48,54 +46,54 @@ export const products = [
   {
     id: "1",
     name: "Classic Armed Chair",
-    price: 299.99,
+    price: 8999.99,
     image: armedChair,
     category: "Armchairs",
     description:
       "A timeless armed chair with classic design and plush cushioning.",
     inStock: true,
-    rating: 4.7,
+    rating: 4.8,
     reviews: 112,
   },
   {
     id: "2",
     name: "Modern Armed Chair",
-    price: 349.99,
+    price: 10499.99,
     image: armedChair1,
     category: "Armchairs",
     description: "Sleek and modern armed chair, a perfect accent for any room.",
     inStock: true,
-    rating: 4.8,
+    rating: 4.1,
     reviews: 98,
   },
   {
     id: "3",
     name: "Vintage Armed Chair",
-    price: 279.99,
+    price: 8399.99,
     image: armedChair2,
     category: "Armchairs",
     description: "Vintage-inspired armed chair with detailed woodwork.",
     inStock: true,
-    rating: 4.6,
+    rating: 3.6,
     reviews: 75,
   },
   {
     id: "4",
     name: "Comfort Armed Chair",
-    price: 399.99,
+    price: 11999.99,
     image: armedChair3,
     category: "Armchairs",
     description:
       "An exceptionally comfortable armed chair designed for relaxation.",
     inStock: true,
     featured: true,
-    rating: 4.9,
+    rating: 3.9,
     reviews: 150,
   },
   {
     id: "5",
     name: "Minimalist Armed Chair",
-    price: 259.99,
+    price: 7499.99,
     image: armedChair4,
     category: "Armchairs",
     description:
@@ -107,7 +105,7 @@ export const products = [
   {
     id: "6",
     name: "Lounge Armed Chair",
-    price: 429.99,
+    price: 12899.99,
     image: armedChair5,
     category: "Armchairs",
     description:
@@ -119,25 +117,25 @@ export const products = [
   {
     id: "7",
     name: "Compact Armed Chair",
-    price: 229.99,
+    price: 6899.99,
     image: armedChair_2,
     category: "Armchairs",
     description:
       "A compact armed chair ideal for smaller spaces without compromising comfort.",
     inStock: true,
-    rating: 4.4,
+    rating: 4.0,
     reviews: 55,
   },
   {
     id: "8",
     name: "Executive Armed Chair",
-    price: 499.99,
+    price: 14999.99,
     image: armedChair_3,
     category: "Armchairs",
     description:
       "An executive armed chair offering both style and ergonomic support.",
     inStock: true,
-    rating: 4.7,
+    rating: 3.7,
     reviews: 90,
   },
 
@@ -145,7 +143,7 @@ export const products = [
   {
     id: "9",
     name: "Queen Platform Bed",
-    price: 699.99,
+    price: 20999.99,
     image: bed1,
     category: "Beds",
     description:
@@ -158,7 +156,7 @@ export const products = [
   {
     id: "10",
     name: "King Upholstered Bed",
-    price: 899.99,
+    price: 26999.99,
     image: bed2,
     category: "Beds",
     description: "Luxurious king-size upholstered bed with a tufted headboard.",
@@ -169,7 +167,7 @@ export const products = [
   {
     id: "11",
     name: "Twin Storage Bed",
-    price: 499.99,
+    price: 14999.99,
     image: bed3,
     category: "Beds",
     description:
@@ -181,7 +179,7 @@ export const products = [
   {
     id: "12",
     name: "Modern Canopy Bed",
-    price: 799.99,
+    price: 23499.99,
     image: bed4,
     category: "Beds",
     description: "An elegant and modern canopy bed that makes a statement.",
@@ -192,7 +190,7 @@ export const products = [
   {
     id: "13",
     name: "Simple Metal Frame Bed",
-    price: 349.99,
+    price: 10499.99,
     image: bed5,
     category: "Beds",
     description:
@@ -204,7 +202,7 @@ export const products = [
   {
     id: "14",
     name: "Rustic Wooden Bed",
-    price: 749.99,
+    price: 22499.99,
     image: bed6,
     category: "Beds",
     description:
@@ -216,7 +214,7 @@ export const products = [
   {
     id: "15",
     name: "Daybed with Trundle",
-    price: 599.99,
+    price: 17999.99,
     image: bed7,
     category: "Beds",
     description:
@@ -230,7 +228,7 @@ export const products = [
   {
     id: "16",
     name: "Ergonomic Office Chair",
-    price: 249.99,
+    price: 6999.99,
     image: chair,
     category: "Chairs",
     description:
@@ -242,7 +240,7 @@ export const products = [
   {
     id: "17",
     name: "Modern Dining Chair",
-    price: 129.99,
+    price: 3899.99,
     image: chair1,
     category: "Chairs",
     description: "A sleek dining chair with a comfortable, contoured seat.",
@@ -253,7 +251,7 @@ export const products = [
   {
     id: "18",
     name: "Accent Velvet Chair",
-    price: 199.99,
+    price: 5499.99,
     image: chair2,
     category: "Chairs",
     description:
@@ -266,7 +264,7 @@ export const products = [
   {
     id: "19",
     name: "Wooden Cafe Chair",
-    price: 99.99,
+    price: 2999.99,
     image: chair3,
     category: "Chairs",
     description:
@@ -280,7 +278,7 @@ export const products = [
   {
     id: "20",
     name: "3-Seater Modern Sofa",
-    price: 999.99,
+    price: 30099.99,
     image: sofa,
     category: "Sofas",
     description:
@@ -293,7 +291,7 @@ export const products = [
   {
     id: "21",
     name: "Sectional Sofa with Chaise",
-    price: 1499.99,
+    price: 8999.99,
     image: sofa1,
     category: "Sofas",
     description:
@@ -305,7 +303,7 @@ export const products = [
   {
     id: "22",
     name: "Leather Loveseat",
-    price: 899.99,
+    price: 8999.99,
     image: sofa2,
     category: "Sofas",
     description:
@@ -317,7 +315,7 @@ export const products = [
   {
     id: "23",
     name: "Sleeper Sofa Bed",
-    price: 1199.99,
+    price: 11199.99,
     image: sofa3,
     category: "Sofas",
     description:
@@ -329,7 +327,7 @@ export const products = [
   {
     id: "24",
     name: "Mid-Century Modern Sofa",
-    price: 1099.99,
+    price: 11099.99,
     image: sofa4,
     category: "Sofas",
     description:
@@ -341,7 +339,7 @@ export const products = [
   {
     id: "25",
     name: "Compact Apartment Sofa",
-    price: 799.99,
+    price: 17999.99,
     image: sofa5,
     category: "Sofas",
     description:
@@ -353,7 +351,7 @@ export const products = [
   {
     id: "26",
     name: "Plush Velvet Sofa",
-    price: 1299.99,
+    price: 12999.99,
     image: sofa6,
     category: "Sofas",
     description: "A luxurious and plush velvet sofa that is soft to the touch.",
@@ -364,7 +362,7 @@ export const products = [
   {
     id: "27",
     name: "Reclining Sofa",
-    price: 1599.99,
+    price: 15499.99,
     image: sofa_2,
     category: "Sofas",
     description:
@@ -376,7 +374,7 @@ export const products = [
   {
     id: "28",
     name: "Chesterfield Sofa",
-    price: 1799.99,
+    price: 17499.99,
     image: sofa_3,
     category: "Sofas",
     description:
@@ -388,7 +386,7 @@ export const products = [
   {
     id: "29",
     name: "Outdoor Wicker Sofa",
-    price: 949.99,
+    price: 19499.99,
     image: sofa_4,
     category: "Sofas",
     description:
@@ -402,7 +400,7 @@ export const products = [
   {
     id: "30",
     name: "5-Drawer Dresser",
-    price: 449.99,
+    price: 11449.99,
     image: storage1,
     category: "Storage",
     description:
@@ -414,7 +412,7 @@ export const products = [
   {
     id: "31",
     name: "Modern Bookshelf",
-    price: 299.99,
+    price: 10999.99,
     image: storage2,
     category: "Storage",
     description: "A modern bookshelf with an open design and multiple shelves.",
@@ -425,7 +423,7 @@ export const products = [
   {
     id: "32",
     name: "Entryway Cabinet",
-    price: 229.99,
+    price: 12249.99,
     image: storage3,
     category: "Storage",
     description:
@@ -437,7 +435,7 @@ export const products = [
   {
     id: "33",
     name: "Bedside Nightstand",
-    price: 149.99,
+    price: 6949.99,
     image: storage4,
     category: "Storage",
     description:
@@ -449,7 +447,7 @@ export const products = [
   {
     id: "34",
     name: "Kitchen Pantry",
-    price: 599.99,
+    price: 11599.99,
     image: storage5,
     category: "Storage",
     description:
@@ -461,7 +459,7 @@ export const products = [
   {
     id: "35",
     name: "Small Storage Ottoman",
-    price: 99.99,
+    price: 3499.99,
     image: storage6,
     category: "Storage",
     description:
@@ -475,7 +473,7 @@ export const products = [
   {
     id: "36",
     name: "Expandable Dining Table",
-    price: 799.99,
+    price: 23459.99,
     image: table,
     category: "Tables",
     description:
@@ -488,7 +486,7 @@ export const products = [
   {
     id: "37",
     name: "Round Coffee Table",
-    price: 349.99,
+    price: 11449.99,
     image: table1,
     category: "Tables",
     description:
@@ -500,7 +498,7 @@ export const products = [
   {
     id: "38",
     name: "Console Table",
-    price: 279.99,
+    price: 8399.99,
     image: table2,
     category: "Tables",
     description: "A narrow console table, perfect for hallways and entryways.",
@@ -511,7 +509,7 @@ export const products = [
   {
     id: "39",
     name: "Minimalist Desk",
-    price: 299.99,
+    price: 8799.99,
     image: table_2,
     category: "Tables",
     description:
@@ -523,7 +521,7 @@ export const products = [
   {
     id: "40",
     name: "Nesting End Tables",
-    price: 199.99,
+    price: 6349.99,
     image: table_3,
     category: "Tables",
     description:
@@ -535,7 +533,7 @@ export const products = [
   {
     id: "41",
     name: "Diam Vlutpat Table",
-    price: 459.99,
+    price: 13749.99,
     image: diamVlutpat,
     category: "Tables",
     description: "An elegant table featuring a unique 'Diam Vlutpat' design.",

@@ -11,15 +11,14 @@ export function BestSellers() {
   );
 
   return (
-    <section className="py-20">
+    <section className="py-20 color">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg-4xl font-bold mb-4">
             Bestsellers of the week
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Quam elementum pulvinar etiam non quam. Faucibus nisl tincidunt eget
-            nullam non nisi elementum sagittis vitae et leo duis ut diam quam.
+          <p className="text-gray-500 max-w-2xl mx-auto">
+            Discover our most-loved pieces that combine style, comfort, and functionality. Handpicked by our customers, for your perfect home.
           </p>
         </div>
 

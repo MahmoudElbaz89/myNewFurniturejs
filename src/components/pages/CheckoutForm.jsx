@@ -13,13 +13,22 @@ const CheckoutForm = ({ shippingInfo, onSuccess, onBack }) => {
 
   // Handle real-time validation errors from the Card Element
   const handleChange = async (event) => {
-    setDisabled(event.empty);
+    // Listen for changes in the CardElement
+    // and display any errors as the customer types their card details
+    setDisabled(!event.complete || event.empty);
     setError(event.error ? event.error.message : "");
+
+    // Reset processing and succeeded states if the user edits card details
+    if (processing) {
+      setProcessing(false);
+    }
+    if (succeeded) {
+      setSucceeded(false);
+    }
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setProcessing(true);
 
     if (!stripe || !elements) {
       // Stripe.js has not loaded yet
@@ -28,35 +37,8 @@ const CheckoutForm = ({ shippingInfo, onSuccess, onBack }) => {
     }
 
     try {
-      // In a real app, you would confirm the payment on your server
-      // const { error, paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
-      //   payment_method: {
-      //     card: elements.getElement(CardElement),
-      //     billing_details: {
-      //       name: shippingInfo.name,
-      //       address: {
-      //         line1: shippingInfo.address,
-      //         city: shippingInfo.city,
-      //         postal_code: shippingInfo.postalCode,
-      //         country: shippingInfo.country,
-      //       },
-      //       email: shippingInfo.email,
-      //     },
-      //   },
-      // });
-
       // For demo purposes, we'll simulate a successful payment
       await new Promise((resolve) => setTimeout(resolve, 1500));
-
-      // In a real app, you would handle the paymentIntent status
-      // if (error) {
-      //   setError(error.message);
-      //   setProcessing(false);
-      // } else if (paymentIntent.status === 'succeeded') {
-      //   setSucceeded(true);
-      //   clearCart();
-      //   onSuccess();
-      // }
 
       // For demo, just call onSuccess
       setSucceeded(true);
