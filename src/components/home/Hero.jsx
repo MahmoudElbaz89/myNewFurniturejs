@@ -101,7 +101,7 @@ export function Hero() {
                                   className="w-full h-[500px] lg:h-[600px] object-cover"
                               />
                               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-
+                              
                               {/* Floating Product Cards */}
                               <div className="absolute top-6 left-6 hover:-translate-y-2 transition-all duration-300">
                                   <Link

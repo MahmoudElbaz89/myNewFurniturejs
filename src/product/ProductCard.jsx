@@ -77,9 +77,16 @@ export function ProductCard({ product }) {
         <div className="px-4 pb-4 flex flex-col items-start gap-2">
           <button
             onClick={handleAddToCart}
-            className="w-full bg-furniture-warm hover:bg-[#2D6450] hover:text-white font-semibold text-sm py-2 px-4 rounded-lg transition-all duration-300"
+            disabled={!product.inStock || product.stock <= 0}
+            className={`w-full font-semibold text-sm py-2 px-4 rounded-lg transition-all duration-300 ${
+              !product.inStock || product.stock <= 0
+                ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                : "bg-furniture-warm hover:bg-[#2D6450] hover:text-white"
+            }`}
           >
-            Add to Cart
+            {!product.inStock || product.stock <= 0
+              ? "Out of Stock"
+              : "Add to Cart"}
           </button>
         </div>
       </div>

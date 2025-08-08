@@ -12,7 +12,6 @@ const CartContext = createContext();
 
 // Cart reducer function
 function cartReducer(state, action) {
-  console.log("Cart Reducer:", action.type, action);
   switch (action.type) {
     case "ADD_TO_CART": {
       // Check if item already exists in cart
@@ -61,8 +60,6 @@ export function CartProvider({ children }) {
   const [cart, dispatch] = useReducer(cartReducer, []);
   const [isInitialized, setIsInitialized] = useState(false);
 
-  console.log("Cart State:", cart);
-
   // Load cart from localStorage on initial render
   useEffect(() => {
     try {
@@ -96,7 +93,6 @@ export function CartProvider({ children }) {
     if (!isInitialized) return; // Skip the initial render
 
     try {
-      console.log("Saving cart to localStorage:", cart);
       localStorage.setItem("furniture-cart", JSON.stringify(cart));
     } catch (error) {
       console.error("Failed to save cart to localStorage", error);

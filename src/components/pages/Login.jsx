@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import {
   Button,
@@ -27,6 +27,35 @@ export default function Login() {
   });
 
   const [loginError, setLoginError] = useState("");
+
+  // Load saved credentials on component mount
+  useEffect(() => {
+    // Check localStorage first (remember me was checked)
+    const savedEmail = localStorage.getItem("userEmail");
+    const savedPassword = localStorage.getItem("userPassword");
+
+    if (savedEmail && savedPassword) {
+      setFormData((prev) => ({
+        ...prev,
+        username: savedEmail,
+        password: savedPassword,
+        rememberMe: true,
+      }));
+    } else {
+      // Check sessionStorage (remember me was not checked)
+      const sessionEmail = sessionStorage.getItem("userEmail");
+      const sessionPassword = sessionStorage.getItem("userPassword");
+
+      if (sessionEmail && sessionPassword) {
+        setFormData((prev) => ({
+          ...prev,
+          username: sessionEmail,
+          password: sessionPassword,
+          rememberMe: false,
+        }));
+      }
+    }
+  }, []);
 
   const validateField = (name, value) => {
     if (!value)
@@ -73,10 +102,10 @@ export default function Login() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validate all fields
+    // Validate all fields first
     const newErrors = {};
     Object.keys(formData).forEach((key) => {
       if (key !== "rememberMe") {
@@ -87,26 +116,47 @@ export default function Login() {
 
     setErrors(newErrors);
 
-    // Check if there are no errors
-    if (Object.values(newErrors).every((error) => !error)) {
-      // Proceed with form submission
+    // If there are validation errors, don't proceed with login
+    if (Object.values(newErrors).some((error) => error)) {
+      return;
+    }
+
+    try {
+      // Mock login - replace with your actual API call
       const account = accounts.find(
         (acc) =>
           acc.email === formData.username && acc.password === formData.password
       );
+
       if (account) {
-        
+        // Store the token based on "Remember me" selection
+        if (formData.rememberMe) {
+          localStorage.setItem("authToken", "dummy-token"); // Replace with actual token
+          localStorage.setItem("userEmail", formData.username);
+          localStorage.setItem("userPassword", formData.password);
+        } else {
+          sessionStorage.setItem("authToken", "dummy-token"); // Replace with actual token
+          sessionStorage.setItem("userEmail", formData.username);
+          sessionStorage.setItem("userPassword", formData.password);
+        }
+
         setLoginError("");
         toast.success("Login successful!");
+
         const redirectPath = new URLSearchParams(location.search).get(
           "redirect"
         );
         navigate(redirectPath || "/");
-        //redirect or update state
       } else {
         setLoginError("Invalid email or password");
+        toast.error("Invalid email or password");
       }
+    } catch (error) {
+      console.error("Login error:", error);
+      setLoginError("An error occurred during login. Please try again.");
+      toast.error("Login failed. Please try again.");
     }
+    console.log(formData, accounts);
   };
 
   return (
@@ -172,7 +222,7 @@ export default function Login() {
             </div>
           </div>
 
-          <div className="flex items-center justify-between">
+          <div className="">
             <FormControlLabel
               control={
                 <Checkbox
@@ -184,14 +234,6 @@ export default function Login() {
               }
               label="Remember me"
             />
-            <div className="text-sm">
-              <Link
-                to="/forgot-password"
-                className="font-medium text-furniture hover:text-furniture-dark"
-              >
-                Forgot your password?
-              </Link>
-            </div>
           </div>
 
           <div>

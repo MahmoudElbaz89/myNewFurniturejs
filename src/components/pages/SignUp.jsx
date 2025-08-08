@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import {accounts} from "../data/accounts"
+import { accounts } from "../data/accounts";
 import {
   Button,
   TextField,
@@ -47,16 +47,29 @@ export default function SignUp() {
       newErrors.lastName = "Last name is required";
     }
 
+    // Email validation
     if (!formData.email) {
       newErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Email is invalid";
+    } else {
+      const emailRegex = /^[\w\-\.]+@([\w]+\.)+[\w-]{2,4}$/;
+      if (!emailRegex.test(formData.email)) {
+        newErrors.email = "Please enter a valid email address";
+      }
+    if (accounts.some((account) => account.email === formData.email)) {
+      newErrors.email = "Email already exists";
+    }
     }
 
+    // Password validation
     if (!formData.password) {
       newErrors.password = "Password is required";
-    } else if (formData.password.length < 6) {
-      newErrors.password = "Password must be at least 6 characters";
+    } else {
+      const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&]).{10,20}$/;
+      if (!passwordRegex.test(formData.password)) {
+        newErrors.password =
+          "Password must be 10-20 characters long and include letters, numbers, and special characters";
+      }
+     
     }
 
     if (formData.password !== formData.confirmPassword) {
@@ -68,18 +81,16 @@ export default function SignUp() {
     }
 
     setErrors(newErrors);
-    // return Object.keys(newErrors).length === 0;
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
 
-    
     setFormData((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
-    })
-);
+    }));
 
     // Clear error when user starts typing
     if (errors[name]) {
@@ -90,17 +101,16 @@ export default function SignUp() {
     }
   };
 
- const handleSubmit= (e)=>{
+  const handleSubmit = (e) => {
     e.preventDefault();
-    validateForm();
-    if(Object.keys(errors).length === 0){
-        setIsSubmitting(true);
-        accounts.push(formData);
-        console.log(accounts);
-        navigate("/login");
-        setIsSubmitting(false);
+    if (validateForm()) {
+      setIsSubmitting(true);
+      accounts.push(formData);
+      console.log(accounts);
+      navigate("/login");
+      setIsSubmitting(false);
     }
- }
+  };
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8 bg-white p-8 rounded-xl shadow-md">
@@ -143,7 +153,7 @@ export default function SignUp() {
                     ),
                   }}
                 />
-              </div>
+              </div>    
               <div>
                 <TextField
                   fullWidth
