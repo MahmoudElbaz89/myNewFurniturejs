@@ -55,9 +55,9 @@ export default function SignUp() {
       if (!emailRegex.test(formData.email)) {
         newErrors.email = "Please enter a valid email address";
       }
-    if (accounts.some((account) => account.email === formData.email)) {
-      newErrors.email = "Email already exists";
-    }
+      if (accounts.some((account) => account.email === formData.email)) {
+        newErrors.email = "Email already exists";
+      }
     }
 
     // Password validation
@@ -69,7 +69,6 @@ export default function SignUp() {
         newErrors.password =
           "Password must be 10-20 characters long and include letters, numbers, and special characters";
       }
-     
     }
 
     if (formData.password !== formData.confirmPassword) {
@@ -153,7 +152,7 @@ export default function SignUp() {
                     ),
                   }}
                 />
-              </div>    
+              </div>
               <div>
                 <TextField
                   fullWidth

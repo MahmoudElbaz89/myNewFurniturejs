@@ -5,12 +5,13 @@ import {
   Add as PlusIcon,
   DeleteOutline as TrashIcon,
 } from "@mui/icons-material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
 export default function Cart() {
   const { cart, removeFromCart, updateQuantity, clearCart, getCartTotal } =
     useCart();
+  const navigate = useNavigate();
 
   const handleUpdateQuantity = (productId, newQuantity) => {
     if (newQuantity < 1) {
@@ -32,6 +33,21 @@ export default function Cart() {
   const handleClearCart = () => {
     clearCart();
     toast.warning("Cart cleared");
+  };
+
+  const isLoggedIn = () => {
+    return (
+      localStorage.getItem("userEmail") || sessionStorage.getItem("userEmail")
+    );
+  };
+
+  const handleCheckout = (e) => {
+    e.preventDefault();
+    if (isLoggedIn()) {
+      navigate("/checkout");
+    } else {
+      navigate("/login", { state: { from: "/checkout" } });
+    }
   };
 
   if (cart.length === 0) {
@@ -202,26 +218,27 @@ export default function Cart() {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Shipping</span>
-                  <span className="text-green-600">Free</span>
+                  <span className="text-furniture-green font-bold">Free</span>
                 </div>
                 <div className="border-t border-gray-200 my-4"></div>
                 <div className="flex justify-between text-lg font-semibold">
                   <span>Total</span>
-                  <span className="text-furniture-green">
+                  <span className="text-furniture-green font-bold">
                     ${(getCartTotal() * 1.1).toFixed(2)}
                   </span>
                 </div>
               </div>
 
               <div className="mt-8 space-y-4">
-                <Link to="/login?redirect=/checkout" className="block">
-                  <button className="bg-furniture-green hover:scale-105 transition-all duration-300 text-white font-bold py-2 w-full rounded-lg normal-case">
-                    Proceed to Checkout
-                  </button>
-                </Link>
+                <button
+                  onClick={handleCheckout}
+                  className="bg-furniture-green hover:scale-105 transition-all duration-300 text-white font-bold py-2 w-full rounded-lg normal-case"
+                >
+                  Proceed to Checkout
+                </button>
 
                 <Link to="/shop" className="block">
-                  <button className="color hover:bg-furniture-warm transition-all duration-300 text-black font-bold py-2 w-full rounded-lg normal-case">
+                  <button className="bg-furniture-warm hover:bg-furniture-warm/80 transition-all duration-300 text-black font-bold py-2 w-full rounded-lg normal-case">
                     Continue Shopping
                   </button>
                 </Link>
