@@ -8,7 +8,7 @@ export default function Footer() {
             className="bg-[rgb(242,240,237)] w-full border-t border-gray-200 overflow-hidden "
             aria-label="Site Footer"
         >
-            <div className="container py-6">
+            <div className="container py-6 px-4">
                 <div className="flex flex-col gap-8 md:flex-row md:justify-between w-full">
                     <div className="space-y-3 max-w-xs text-center md:text-left">
                         <img
