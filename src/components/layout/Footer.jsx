@@ -9,7 +9,7 @@ export default function Footer() {
             aria-label="Site Footer"
         >
             <div className="container py-6 px-4">
-                <div className="flex flex-col gap-8 md:flex-row md:justify-between w-full">
+                <div className="flex flex-col gap-8 items-center md:items-start md:flex-row md:justify-between w-full">
                     <div className="space-y-3 max-w-xs text-center md:text-left">
                         <img
                             src={logo}
@@ -111,19 +111,19 @@ export default function Footer() {
                         </h3>
                         <div className="flex space-x-6 justify-center">
                             <a
-                                href="#"
+                                href="https://www.facebook.com"
                                 className="text-gray-500 hover:text-blue-600 transition-colors duration-300"
                             >
                                 <Facebook fontSize="small" />
                             </a>
                             <a
-                                href="#"
+                                href="https://www.instagram.com"
                                 className="text-gray-500 hover:text-purple-600 transition-colors duration-300"
                             >
                                 <Instagram fontSize="small" />
                             </a>
                             <a
-                                href="#"
+                                href="https://www.x.com"
                                 className="text-gray-500 hover:text-blue-400 transition-colors duration-300"
                             >
                                 <Twitter fontSize="small" />
