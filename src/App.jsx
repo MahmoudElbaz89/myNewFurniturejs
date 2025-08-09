@@ -14,11 +14,12 @@ import NotFound from "./components/pages/NotFound";
 import Login from "./components/pages/Login";
 import SignUp from "./components/pages/SignUp";
 import Checkout from "./components/pages/ShippingInfo";
-import ProductDetails from "./components/pages/ProductDetails";
+import ProductDetails from "./components/product/ProductDetails";
+import Terms from "./components/pages/Terms";
+import Privacy from "./components/pages/Privacy";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import { Toaster } from "sonner";
-// import "./index.css";
 
 const queryClient = new QueryClient();
 const stripePromise = loadStripe(
@@ -56,15 +57,10 @@ const App = () => (
                                 <Route path="/contact" element={<Contact />} />
                                 <Route path="/login" element={<Login />} />
                                 <Route path="/signup" element={<SignUp />} />
-                                <Route
-                                    path="/checkout"
-                                    element={<Checkout />}
-                                />
-                                <Route
-                                    path="/products/:id"
-                                    element={<ProductDetails />}
-                                />
-                                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                                <Route path="/checkout" element={<Checkout />} />
+                                <Route path="/products/:id" element={<ProductDetails />} />
+                                <Route path="/terms" element={<Terms />} />
+                                <Route path="/privacy" element={<Privacy />} />
                                 <Route path="*" element={<NotFound />} />
                             </Routes>
                         </main>

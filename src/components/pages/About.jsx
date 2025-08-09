@@ -70,7 +70,7 @@ export default function About() {
 
           {/* Story Section */}
           <div className="py-16 color ">
-              <div className="flex flex-col lg:flex-row items-center gap-12 container">
+              <div className="flex flex-col lg:flex-row items-center gap-12 container px-4">
                   <div className="lg:w-1/2">
                       <span className="inline-block mb-4 px-4 py-2 text-xs font-bold uppercase tracking-wider text-furniture-green bg-furniture-green/10 rounded-full">
                           Our Story
@@ -111,7 +111,7 @@ export default function About() {
 
           {/* Features Section */}
           <div className="py-16 bg-[rgb(242,240,237)]">
-              <div className="text-center mb-16">
+              <div className="text-center mb-16 ">
                   <h4 className="mb-4 font-bold text-3xl ">
                       Why Choose Furniture Studio?
                   </h4>
@@ -121,7 +121,7 @@ export default function About() {
                   </h4>
               </div>
 
-              <div className="grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 container">
+              <div className="grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 container px-4">
                   {features.map((feature, index) => (
                       <div
                           key={index}
@@ -141,44 +141,6 @@ export default function About() {
               </div>
           </div>
 
-          {/* Team Section */}
-          {/* <div className="py-16">
-        <Container maxWidth="lg">
-          <div className="text-center mb-16">
-            <h4 className="mb-4 font-bold text-3xl ">
-              Meet Our Team
-            </h4>
-            <h4 className="max-w-3xl mx-auto text-gray-600">
-              The passionate individuals behind every beautiful piece of
-              furniture we create.
-            </h4>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {team.map((member, index) => (
-              <Card
-                key={index}
-                className="h-full flex flex-col border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300"
-              >
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-72 object-cover rounded-t-xl transition-transform duration-500 hover:scale-105"
-                />
-                <div className="p-6 text-center">
-                  <Typography variant="h6" className="font-semibold">
-                    {member.name}
-                  </Typography>
-                  <Typography className="text-furniture-green font-medium text-sm">
-                    {member.role}
-                  </Typography>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </Container>
-      </div> */}
-
           {/* CTA Section */}
           <div className="py-16 bg-furniture-green text-white">
               <Container maxWidth="md">
@@ -195,14 +157,14 @@ export default function About() {
                       <button
                           component={Link}
                           to="/shop"
-                          className="bg-white text-furniture-green hover:bg-gray-100 font-bold py-3 px-8 rounded-lg normal-case"
+                          className="bg-white text-furniture-green hover:bg-furniture-warm  hover:text-black font-bold py-3 px-8 rounded-lg transition-all duration-300"
                       >
                           Shop Now
                       </button>
                       <button
                           component={Link}
                           to="/contact"
-                          className="bg-white text-furniture-green hover:bg-gray-100 font-bold py-3 px-8 rounded-lg normal-case"
+                          className="bg-white text-furniture-green hover:bg-furniture-warm  hover:text-black font-bold py-3 px-8 rounded-lg transition-all duration-300"
                       >
                           Contact Us
                       </button>

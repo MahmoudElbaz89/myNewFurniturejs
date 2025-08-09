@@ -1,45 +1,45 @@
 // Import all product images from the assets directory
-import armedChair1 from "../../assets/imgs/armedChair (1).webp";
-import armedChair2 from "../../assets/imgs/armedChair (2).webp";
-import armedChair3 from "../../assets/imgs/armedChair (3).webp";
-import armedChair4 from "../../assets/imgs/armedChair (4).webp";
-import armedChair5 from "../../assets/imgs/armedChair (5).webp";
-import armedChair from "../../assets/imgs/armedChair.webp";
-import armedChair_2 from "../../assets/imgs/armedChair2.webp";
-import armedChair_3 from "../../assets/imgs/armedChair3.jpg";
-import bed1 from "../../assets/imgs/bed.webp";
-import bed2 from "../../assets/imgs/bed2.webp";
-import bed3 from "../../assets/imgs/bed3.webp";
-import bed4 from "../../assets/imgs/bed4.webp";
-import bed5 from "../../assets/imgs/bed5.webp";
-import bed6 from "../../assets/imgs/bed6.webp";
-import bed7 from "../../assets/imgs/bed7.webp";
-import chair1 from "../../assets/imgs/chair (1).webp";
-import chair2 from "../../assets/imgs/chair (2).webp";
-import chair3 from "../../assets/imgs/chair (3).webp";
-import chair from "../../assets/imgs/chair.jpg";
-import sofa1 from "../../assets/imgs/sofa (1).webp";
-import sofa2 from "../../assets/imgs/sofa (2).webp";
-import sofa3 from "../../assets/imgs/sofa (3).webp";
-import sofa4 from "../../assets/imgs/sofa (4).webp";
-import sofa5 from "../../assets/imgs/sofa (5).webp";
-import sofa6 from "../../assets/imgs/sofa (6).webp";
-import sofa from "../../assets/imgs/sofa.jpg";
-import sofa_2 from "../../assets/imgs/sofa2.jpg";
-import sofa_3 from "../../assets/imgs/sofa3.jpg";
-import sofa_4 from "../../assets/imgs/sofa4.jpg";
-import storage1 from "../../assets/imgs/storage.jpg";
-import storage2 from "../../assets/imgs/storage2.jpg";
-import storage3 from "../../assets/imgs/storage3.jpg";
-import storage4 from "../../assets/imgs/storage4.webp";
-import storage5 from "../../assets/imgs/storage5.jpg";
-import storage6 from "../../assets/imgs/storage6.webp";
-import table1 from "../../assets/imgs/table (1).webp";
-import table2 from "../../assets/imgs/table (2).webp";
-import table from "../../assets/imgs/table.webp";
-import table_2 from "../../assets/imgs/table2.webp";
-import table_3 from "../../assets/imgs/table3.webp";
-import diamVlutpat from "../../assets/imgs/Diam Vlutpat.webp";
+import armedChair1 from "../../assets/armedChair (1).webp";
+import armedChair2 from "../../assets/armedChair (2).webp";
+import armedChair3 from "../../assets/armedChair (3).webp";
+import armedChair4 from "../../assets/armedChair (4).webp";
+import armedChair5 from "../../assets/armedChair (5).webp";
+import armedChair from "../../assets/armedChair.webp";
+import armedChair_2 from "../../assets/armedChair2.webp";
+import armedChair_3 from "../../assets/armedChair3.jpg";
+import bed1 from "../../assets/bed.webp";
+import bed2 from "../../assets/bed2.webp";
+import bed3 from "../../assets/bed3.webp";
+import bed4 from "../../assets/bed4.webp";
+import bed5 from "../../assets/bed5.webp";
+import bed6 from "../../assets/bed6.webp";
+import bed7 from "../../assets/bed7.webp";
+import chair1 from "../../assets/chair (1).webp";
+import chair2 from "../../assets/chair (2).webp";
+import chair3 from "../../assets/chair (3).webp";
+import chair from "../../assets/chair.jpg";
+import sofa1 from "../../assets/sofa (1).webp";
+import sofa2 from "../../assets/sofa (2).webp";
+import sofa3 from "../../assets/sofa (3).webp";
+import sofa4 from "../../assets/sofa (4).webp";
+import sofa5 from "../../assets/sofa (5).webp";
+import sofa6 from "../../assets/sofa (6).webp";
+import sofa from "../../assets/sofa.jpg";
+import sofa_2 from "../../assets/sofa2.jpg";
+import sofa_3 from "../../assets/sofa3.jpg";
+import sofa_4 from "../../assets/sofa4.jpg";
+import storage1 from "../../assets/storage.jpg";
+import storage2 from "../../assets/storage2.jpg";
+import storage3 from "../../assets/storage3.jpg";
+import storage4 from "../../assets/storage4.webp";
+import storage5 from "../../assets/storage5.jpg";
+import storage6 from "../../assets/storage6.webp";
+import table1 from "../../assets/table (1).webp";
+import table2 from "../../assets/table (2).webp";
+import table from "../../assets/table.webp";
+import table_2 from "../../assets/table2.webp";
+import table_3 from "../../assets/table3.webp";
+import diamVlutpat from "../../assets/Diam Vlutpat.webp";
 
 export const products = [
   // Armchairs
@@ -47,6 +47,7 @@ export const products = [
     id: "1",
     name: "Classic Armed Chair",
     price: 8999.99,
+    stock: 25,
     image: armedChair,
     category: "Armchairs",
     description:
@@ -59,6 +60,7 @@ export const products = [
     id: "2",
     name: "Modern Armed Chair",
     price: 10499.99,
+    stock: 18,
     image: armedChair1,
     category: "Armchairs",
     description: "Sleek and modern armed chair, a perfect accent for any room.",
@@ -70,6 +72,7 @@ export const products = [
     id: "3",
     name: "Vintage Armed Chair",
     price: 8399.99,
+    stock: 12,
     image: armedChair2,
     category: "Armchairs",
     description: "Vintage-inspired armed chair with detailed woodwork.",
@@ -81,6 +84,7 @@ export const products = [
     id: "4",
     name: "Comfort Armed Chair",
     price: 11999.99,
+    stock: 8,
     image: armedChair3,
     category: "Armchairs",
     description:
@@ -94,6 +98,7 @@ export const products = [
     id: "5",
     name: "Minimalist Armed Chair",
     price: 7499.99,
+    stock: 30,
     image: armedChair4,
     category: "Armchairs",
     description:
@@ -106,6 +111,7 @@ export const products = [
     id: "6",
     name: "Lounge Armed Chair",
     price: 12899.99,
+    stock: 15,
     image: armedChair5,
     category: "Armchairs",
     description:
@@ -118,6 +124,7 @@ export const products = [
     id: "7",
     name: "Compact Armed Chair",
     price: 6899.99,
+    stock: 20,
     image: armedChair_2,
     category: "Armchairs",
     description:
@@ -130,6 +137,7 @@ export const products = [
     id: "8",
     name: "Executive Armed Chair",
     price: 14999.99,
+    stock: 10,
     image: armedChair_3,
     category: "Armchairs",
     description:
@@ -144,6 +152,7 @@ export const products = [
     id: "9",
     name: "Queen Platform Bed",
     price: 20999.99,
+    stock: 12,
     image: bed1,
     category: "Beds",
     description:
@@ -157,6 +166,7 @@ export const products = [
     id: "10",
     name: "King Upholstered Bed",
     price: 26999.99,
+    stock: 8,
     image: bed2,
     category: "Beds",
     description: "Luxurious king-size upholstered bed with a tufted headboard.",
@@ -168,6 +178,7 @@ export const products = [
     id: "11",
     name: "Twin Storage Bed",
     price: 14999.99,
+    stock: 15,
     image: bed3,
     category: "Beds",
     description:
@@ -180,6 +191,7 @@ export const products = [
     id: "12",
     name: "Modern Canopy Bed",
     price: 23499.99,
+    stock: 7,
     image: bed4,
     category: "Beds",
     description: "An elegant and modern canopy bed that makes a statement.",
@@ -191,6 +203,7 @@ export const products = [
     id: "13",
     name: "Simple Metal Frame Bed",
     price: 10499.99,
+    stock: 18,
     image: bed5,
     category: "Beds",
     description:
@@ -203,6 +216,7 @@ export const products = [
     id: "14",
     name: "Rustic Wooden Bed",
     price: 22499.99,
+    stock: 10,
     image: bed6,
     category: "Beds",
     description:
@@ -215,6 +229,7 @@ export const products = [
     id: "15",
     name: "Daybed with Trundle",
     price: 17999.99,
+    stock: 12,
     image: bed7,
     category: "Beds",
     description:
@@ -229,6 +244,7 @@ export const products = [
     id: "16",
     name: "Ergonomic Office Chair",
     price: 6999.99,
+    stock: 25,
     image: chair,
     category: "Chairs",
     description:
@@ -241,6 +257,7 @@ export const products = [
     id: "17",
     name: "Modern Dining Chair",
     price: 3899.99,
+    stock: 30,
     image: chair1,
     category: "Chairs",
     description: "A sleek dining chair with a comfortable, contoured seat.",
@@ -252,6 +269,7 @@ export const products = [
     id: "18",
     name: "Accent Velvet Chair",
     price: 5499.99,
+    stock: 20,
     image: chair2,
     category: "Chairs",
     description:
@@ -265,6 +283,7 @@ export const products = [
     id: "19",
     name: "Wooden Cafe Chair",
     price: 2999.99,
+    stock: 35,
     image: chair3,
     category: "Chairs",
     description:
@@ -279,11 +298,12 @@ export const products = [
     id: "20",
     name: "3-Seater Modern Sofa",
     price: 30099.99,
+    stock: 0,
     image: sofa,
     category: "Sofas",
     description:
       "A spacious and comfortable 3-seater sofa with a modern design.",
-    inStock: true,
+    inStock: false,
     featured: true,
     rating: 4.8,
     reviews: 280,
@@ -292,6 +312,7 @@ export const products = [
     id: "21",
     name: "Sectional Sofa with Chaise",
     price: 8999.99,
+    stock: 15,
     image: sofa1,
     category: "Sofas",
     description:
@@ -304,6 +325,7 @@ export const products = [
     id: "22",
     name: "Leather Loveseat",
     price: 8999.99,
+    stock: 18,
     image: sofa2,
     category: "Sofas",
     description:
@@ -316,6 +338,7 @@ export const products = [
     id: "23",
     name: "Sleeper Sofa Bed",
     price: 11199.99,
+    stock: 12,
     image: sofa3,
     category: "Sofas",
     description:
@@ -328,6 +351,7 @@ export const products = [
     id: "24",
     name: "Mid-Century Modern Sofa",
     price: 11099.99,
+    stock: 10,
     image: sofa4,
     category: "Sofas",
     description:
@@ -340,6 +364,7 @@ export const products = [
     id: "25",
     name: "Compact Apartment Sofa",
     price: 17999.99,
+    stock: 14,
     image: sofa5,
     category: "Sofas",
     description:
@@ -352,6 +377,7 @@ export const products = [
     id: "26",
     name: "Plush Velvet Sofa",
     price: 12999.99,
+    stock: 16,
     image: sofa6,
     category: "Sofas",
     description: "A luxurious and plush velvet sofa that is soft to the touch.",
@@ -363,6 +389,7 @@ export const products = [
     id: "27",
     name: "Reclining Sofa",
     price: 15499.99,
+    stock: 11,
     image: sofa_2,
     category: "Sofas",
     description:
@@ -375,6 +402,7 @@ export const products = [
     id: "28",
     name: "Chesterfield Sofa",
     price: 17499.99,
+    stock: 9,
     image: sofa_3,
     category: "Sofas",
     description:
@@ -387,6 +415,7 @@ export const products = [
     id: "29",
     name: "Outdoor Wicker Sofa",
     price: 19499.99,
+    stock: 8,
     image: sofa_4,
     category: "Sofas",
     description:
@@ -401,6 +430,7 @@ export const products = [
     id: "30",
     name: "5-Drawer Dresser",
     price: 11449.99,
+    stock: 15,
     image: storage1,
     category: "Storage",
     description:
@@ -413,6 +443,7 @@ export const products = [
     id: "31",
     name: "Modern Bookshelf",
     price: 10999.99,
+    stock: 18,
     image: storage2,
     category: "Storage",
     description: "A modern bookshelf with an open design and multiple shelves.",
@@ -424,6 +455,7 @@ export const products = [
     id: "32",
     name: "Entryway Cabinet",
     price: 12249.99,
+    stock: 12,
     image: storage3,
     category: "Storage",
     description:
@@ -436,6 +468,7 @@ export const products = [
     id: "33",
     name: "Bedside Nightstand",
     price: 6949.99,
+    stock: 20,
     image: storage4,
     category: "Storage",
     description:
@@ -448,6 +481,7 @@ export const products = [
     id: "34",
     name: "Kitchen Pantry",
     price: 11599.99,
+    stock: 14,
     image: storage5,
     category: "Storage",
     description:
@@ -460,6 +494,7 @@ export const products = [
     id: "35",
     name: "Small Storage Ottoman",
     price: 3499.99,
+    stock: 25,
     image: storage6,
     category: "Storage",
     description:
@@ -474,6 +509,7 @@ export const products = [
     id: "36",
     name: "Expandable Dining Table",
     price: 23459.99,
+    stock: 10,
     image: table,
     category: "Tables",
     description:
@@ -487,6 +523,7 @@ export const products = [
     id: "37",
     name: "Round Coffee Table",
     price: 11449.99,
+    stock: 16,
     image: table1,
     category: "Tables",
     description:
@@ -499,6 +536,7 @@ export const products = [
     id: "38",
     name: "Console Table",
     price: 8399.99,
+    stock: 18,
     image: table2,
     category: "Tables",
     description: "A narrow console table, perfect for hallways and entryways.",
@@ -510,6 +548,7 @@ export const products = [
     id: "39",
     name: "Minimalist Desk",
     price: 8799.99,
+    stock: 15,
     image: table_2,
     category: "Tables",
     description:
@@ -522,6 +561,7 @@ export const products = [
     id: "40",
     name: "Nesting End Tables",
     price: 6349.99,
+    stock: 22,
     image: table_3,
     category: "Tables",
     description:
@@ -534,6 +574,7 @@ export const products = [
     id: "41",
     name: "Diam Vlutpat Table",
     price: 13749.99,
+    stock: 9,
     image: diamVlutpat,
     category: "Tables",
     description: "An elegant table featuring a unique 'Diam Vlutpat' design.",

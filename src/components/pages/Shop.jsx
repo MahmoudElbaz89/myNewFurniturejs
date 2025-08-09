@@ -1,6 +1,6 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import { useSearchParams, useLocation } from "react-router-dom";
-import { ProductCard } from "../../product/ProductCard";
+import { ProductCard } from "../product/ProductCard";
 import { products, categories } from "../data/products";
 import SearchIcon from "@mui/icons-material/Search";
 
@@ -56,9 +56,9 @@ export default function Shop() {
 
     return (
         <div className="min-h-screen color">
-            <section className="bg-gradient-to-r from-[#F5EDE6] to-[#F8F2EC] py-20">
+            <section className="bg-gradient-to-r from-furniture-cream to-furniture-warm py-20">
                 <div className="max-w-7xl mx-auto px-4 text-center">
-                    <h1 className="text-5xl font-bold mb-4">
+                    <h1 className="text-5xl font-bold mb-5">
                         Our Furniture Collection
                     </h1>
                     <p className="text-lg text-gray-500 max-w-2xl mx-auto">
@@ -68,7 +68,7 @@ export default function Shop() {
                 </div>
             </section>
 
-            <div className="max-w-7xl mx-auto px-4 py-12">
+            <div className="container mx-auto px-4 py-12">
                 <div className="flex flex-col lg:flex-row gap-4 mb-8">
                     <div className="relative flex-1">
                         <input
@@ -79,7 +79,7 @@ export default function Shop() {
                             ref={searchInputRef}
                             className="w-full border border-gray-300 rounded-md py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-furniture-green"
                         />
-                            <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+                        <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
                     </div>
 
                     <div className="flex items-center gap-2">

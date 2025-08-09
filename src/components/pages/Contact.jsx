@@ -52,8 +52,8 @@ export default function Contact() {
           <div className="min-h-screen color pb-16">
               {/* Hero Section */}
               <div className="py-16 text-center bg-gradient-to-r from-furniture-cream to-furniture-warm">
-                  <div className="container max-w-6xl mx-auto px-4">
-                      <h1 className="text-4xl font-bold mb-3">Get in Touch</h1>
+                  <div className="max-w-6xl mx-auto">
+                      <h1 className="font-bold text-5xl mb-5">Get in Touch</h1>
                       <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                           Have questions about our furniture or need design
                           consultation? We'd love to hear from you and help
@@ -63,11 +63,11 @@ export default function Contact() {
               </div>
 
               {/* Contact Form and Info */}
-              <div className="container mx-auto  pt-12 lg:pt-20 ">
+              <div className="container mx-auto px-4 pt-12 lg:pt-20 ">
                   <div className="flex flex-col gap-8 lg:flex-row">
                       {/* Contact Form */}
                       <div className="w-full lg:w-1/2 xl:w-[50%] mx-auto">
-                          <div className="bg-white rounded-xl p-6 md:p-8">
+                          <div className="border bg-white border-gray-20 rounded-xl p-6 md:p-8">
                               <h2 className="text-2xl font-bold mb-6 text-center md:text-3xl">
                                   Send us a Message
                               </h2>
@@ -158,7 +158,7 @@ export default function Contact() {
                       <div className=" lg:w-1/2 xl:w-[50%] mx-auto">
                           <div className=" rounded-xl  p-6 md:p-8 h-full">
                               <div className="mb-8">
-                                  <h2 className="text-2xl font-bold mb-4 md:text-3xl">
+                                  <h2 className="text-2xl font-bold mb-4 md:text-3xl text-center">
                                       Contact Information
                                   </h2>
                                   <p className="text-gray-600">
@@ -205,7 +205,7 @@ export default function Contact() {
 
               {/* Map Section */}
               <div className="w-full mx-auto my-14 py-14 bg-[rgb(242,240,237)]">
-                  <div className=" container  mx-auto px-4">
+                  <div className=" container mx-auto px-4">
                       <div className="text-center mb-12">
                           <h2 className="text-3xl font-bold mb-2">
                               Find Our Showroom

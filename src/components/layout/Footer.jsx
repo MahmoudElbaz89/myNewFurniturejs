@@ -1,47 +1,38 @@
 import { Link } from "react-router-dom";
+import { Facebook, Instagram, Twitter } from "@mui/icons-material";
 import logo from "./logo.svg";
 
 export default function Footer() {
     return (
-        <footer className=" mx-auto bg-[rgb(242,240,237)]  w-full overflow-hidden">
-            <div className="container mx-auto px-4 py-12 max-w-7xl">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
-                    {/* Company Info */}
-                    <div className="space-y-4">
-                        <div className="flex items-center space-x-2">
-                          {/* logo */}
-                            <img
-                                src={logo}
-                                alt="Furniture"
-                                className="h-7 w-auto" 
-                            />
-                            {/* <div className="w-8 h-8 bg-furniture-green rounded-md flex items-center justify-center">
-                                        <span className="text-white font-bold text-lg">
-                                            M
-                                        </span>
-                                    </div>
-                                    <span className="text-xl font-bold text-gray-900">
-                                        Furniture
-                                    </span> */}
-                        </div>
+        <footer
+            className="bg-[rgb(242,240,237)] w-full border-t border-gray-200 overflow-hidden "
+            aria-label="Site Footer"
+        >
+            <div className="container py-6">
+                <div className="flex flex-col gap-8 md:flex-row md:justify-between w-full">
+                    <div className="space-y-3 max-w-xs text-center md:text-left">
+                        <img
+                            src={logo}
+                            alt="Furniture"
+                            className="h-7 w-auto mx-auto md:mx-0"
+                        />
                         <p className="text-gray-500 text-sm">
                             Exquisite design combined with functionalities.
                             Creating beautiful spaces for modern living.
                         </p>
-                        <div className="flex space-x-4">
-                            <span className="text-sm text-gray-500">
-                                📞 576-393-4937
-                            </span>
-                        </div>
+                        <p className="text-sm text-gray-500">
+                            📞 +201099613458
+                        </p>
                     </div>
 
-                    {/* Quick Links */}
-                    <div>
-                        <h3 className="font-semibold mb-4">Quick Links</h3>
-                        <ul className="space-y-2">
-                            <li>
+                    <div className="md:w-fit text-center">
+                        <h3 className="text-lg font-semibold text-gray-800 mb-3">
+                            Quick Links
+                        </h3>
+                        <ul className="space-y-2 flex items-center justify-center md:block gap-4">
+                            <li className="self-end">
                                 <Link
-                                    to="/#"
+                                    to="/"
                                     className="text-gray-500 hover:text-furniture-green transition-colors"
                                 >
                                     Home
@@ -74,11 +65,12 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Categories */}
-                    <div>
-                        <h3 className="font-semibold mb-4">Categories</h3>
-                        <ul className="space-y-2">
-                            <li>
+                    <div className="md:w-fit text-center">
+                        <h3 className="text-lg font-semibold text-gray-800 mb-3">
+                            Categories
+                        </h3>
+                        <ul className="space-y-2 flex items-center justify-center md:block gap-4">
+                            <li className="self-end">
                                 <Link
                                     to="/shop?category=Chairs"
                                     className="text-gray-500 hover:text-furniture-green transition-colors"
@@ -113,24 +105,35 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Newsletter */}
-                    <div>
-                        <h3 className="font-semibold mb-2">Newsletter</h3>
-                        <p className="text-gray-500 text-sm mb-4">
-                            Subscribe for updates and special offers.
-                        </p>
-                        <div className="flex w-full">
-                            <input
-                                type="email"
-                                placeholder="Your email"
-                                className="flex-1 min-w-0 px-3 py-2 border border-border rounded-l-md focus:outline-none focus:ring-2 focus:ring-furniture-green focus:border-transparent text-sm"
-                            />
-                            <button className="bg-furniture-green text-white px-4 py-2 rounded-r-md hover:bg-furniture-green/90 transition-colors text-sm whitespace-nowrap">
-                                Subscribe
-                            </button>
+                    <div className="md:w-fit">
+                        <h3 className="text-lg font-semibold text-gray-800 mb-3 text-center">
+                            Follow Us
+                        </h3>
+                        <div className="flex space-x-6 justify-center">
+                            <a
+                                href="#"
+                                className="text-gray-500 hover:text-blue-600 transition-colors duration-300"
+                            >
+                                <Facebook fontSize="small" />
+                            </a>
+                            <a
+                                href="#"
+                                className="text-gray-500 hover:text-purple-600 transition-colors duration-300"
+                            >
+                                <Instagram fontSize="small" />
+                            </a>
+                            <a
+                                href="#"
+                                className="text-gray-500 hover:text-blue-400 transition-colors duration-300"
+                            >
+                                <Twitter fontSize="small" />
+                            </a>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="container border-t border-gray-300 py-6 text-sm text-center text-gray-500">
+                © {new Date().getFullYear()} Furniture. All rights reserved.
             </div>
         </footer>
     );
