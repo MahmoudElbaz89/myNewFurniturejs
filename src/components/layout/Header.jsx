@@ -33,25 +33,20 @@ export default function Header() {
     const cartItemsCount = getCartItemsCount();
 
     return (
-        <header className="color border-b border-gray-200 sticky top-0 z-50">
+        <header className="color border-b border-gray-200 sticky top-0 z-50 shadow-sm">
             {/* Main header */}
-            <div className="container mx-auto px-4 py-4">
-                <div className="flex items-center justify-between">
+            <div className="container mx-auto px-4 py-4 ">
+                <div className="flex items-center justify-between ">
                     {/* Logo */}
-                    <Link to="/" className="flex items-center space-x-2">
+                    <Link to="/" className="flex items-center space-x-2 ">
                         <img
                             src={logo}
                             alt="Furniture"
-                            className="h-7 w-auto" // Resizes image proportionally
+                            className="h-7 w-auto " // Resizes image proportionally
                         />
-                        {/* <div className="w-8 h-8 bg-furniture-green rounded-md flex items-center justify-center">
-                          <span className="text-white font-bold text-lg">
-                              M
-                          </span>
-                      </div>
-                      <span className="text-xl font-bold text-gray-900">
-                          Furniture
-                      </span> */}
+                        <p className="[@media(max-width:380px)]:hidden flex text-lg sm:text-xl font-bold text-gray-900 whitespace-nowrap">
+                            Modern Furniture
+                        </p>
                     </Link>
 
                     {/* Desktop Navigation */}
@@ -60,7 +55,7 @@ export default function Header() {
                             <Link
                                 key={item.name}
                                 to={item.href}
-                                className={`text-sm font-medium transition-colors hover:text-furniture-green ${
+                                className={` font-semibold transition-colors hover:text-furniture-green ${
                                     location.pathname === item.href
                                         ? "text-furniture-green"
                                         : "text-gray-600"
@@ -72,7 +67,7 @@ export default function Header() {
                     </nav>
 
                     {/* Right side actions */}
-                    <div className="flex items-center space-x-4">
+                    <div className="flex items-center space-x-1 md:space-x-4 ">
                         <button
                             onClick={() =>
                                 navigate("/shop", {

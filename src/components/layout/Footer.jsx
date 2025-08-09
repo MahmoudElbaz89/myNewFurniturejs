@@ -11,11 +11,19 @@ export default function Footer() {
             <div className="container py-6 px-4">
                 <div className="flex flex-col gap-8 items-center md:items-start md:flex-row md:justify-between w-full">
                     <div className="space-y-3 max-w-xs text-center md:text-left">
-                        <img
-                            src={logo}
-                            alt="Furniture"
-                            className="h-7 w-auto mx-auto md:mx-0"
-                        />
+                        <Link
+                            to="/"
+                            className="flex items-center justify-center space-x-2  md:justify-start"
+                        >
+                            <img
+                                src={logo}
+                                alt="Furniture"
+                                className="h-7 w-auto" // Resizes image proportionally
+                            />
+                            <p className="rounded-sm flex items-center justify-center text-xl font-bold text-gray-900">
+                                Modern Furniture
+                            </p>
+                        </Link>
                         <p className="text-gray-500 text-sm">
                             Exquisite design combined with functionalities.
                             Creating beautiful spaces for modern living.
