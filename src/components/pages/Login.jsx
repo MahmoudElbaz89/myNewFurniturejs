@@ -125,9 +125,9 @@ export default function Login() {
         });
 
         toast.success("Successfully logged in!");
-        const redirectPath = new URLSearchParams(location.search).get(
-            "redirect"
-        );
+        const redirectPath =
+            location.state?.from ||
+            new URLSearchParams(location.search).get("redirect");
         navigate(redirectPath || "/");
     };
 
