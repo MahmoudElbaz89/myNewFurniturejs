@@ -27,12 +27,7 @@ export function Hero() {
   
   return (
       <section className="relative bg-gradient-to-r from-furniture-cream to-furniture-warm overflow-hidden ">
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-5">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[rgb(58,120,95)]/20 to-transparent"></div>
-          </div>
-
-          <div className="container mx-auto px-4 py-16 lg:py-24">
+          <div className="container mx-auto px-4 py-12 xl:py-16">
               <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-20">
                   {/* Left Content - Main Hero Text */}
                   <div className="lg:col-span-6 space-y-6 md:space-y-8 animate-fade-in">
