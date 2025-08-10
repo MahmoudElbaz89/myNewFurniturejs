@@ -57,7 +57,7 @@ export default function About() {
           <div className="py-16 text-center bg-gradient-to-r from-furniture-cream to-furniture-warm">
               <Container maxWidth="lg">
                   <h1 className="mb-6 font-bold text-5xl ">
-                      About Furniture Studio
+                      About Modern Furniture
                   </h1>
                   <h6 className="max-w-3xl mx-auto text-gray-500 text-center mb-6 ">
                       For over two decades, we've been crafting exceptional
@@ -81,7 +81,7 @@ export default function About() {
                       <div className="space-y-4 text-gray-600 mb-8">
                           <p>
                               What started as a small family workshop has grown
-                              into a renowned furniture studio. Our journey
+                              into a renowned modern furniture. Our journey
                               began with a simple belief: furniture should be
                               more than just functional—it should inspire.
                           </p>
@@ -94,7 +94,7 @@ export default function About() {
                           </p>
                       </div>
                       <Link to="/shop">
-                          <button className="bg-furniture-green text-white rounded-md px-8 py-2 hover:scale-105 hover:bg-[rgb(76,132,110)] transition-all duration-300">
+                          <button className="bg-furniture-green text-white rounded-md px-8 py-3 hover:scale-105 hover:bg-[rgb(76,132,110)] transition-all duration-300">
                               Explore Our Collection
                           </button>
                       </Link>
@@ -113,7 +113,7 @@ export default function About() {
           <div className="py-16 bg-[rgb(242,240,237)]">
               <div className="text-center mb-16 ">
                   <h4 className="mb-4 font-bold text-3xl ">
-                      Why Choose Furniture Studio?
+                      Why Choose Modern Furniture?
                   </h4>
                   <h4 className="max-w-3xl mx-auto text-gray-600">
                       We're committed to excellence in every aspect of our
