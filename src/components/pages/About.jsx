@@ -154,13 +154,15 @@ export default function About() {
                       </Typography>
                   </div>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                      <button
-                          component={Link}
-                          to="/shop"
-                          className="bg-white text-furniture-green hover:bg-furniture-warm  hover:text-black font-bold py-3 px-8 rounded-lg transition-all duration-300"
-                      >
-                          Shop Now
-                      </button>
+                      <Link to="/shop">
+                          <button
+                              component={Link}
+                              className="bg-white text-furniture-green hover:bg-furniture-warm  hover:text-black font-bold py-3 px-8 rounded-lg transition-all duration-300"
+                          >
+                              Shop Now
+                          </button>
+                      </Link>
+                      <Link to="/contact">
                       <button
                           component={Link}
                           to="/contact"
@@ -168,6 +170,7 @@ export default function About() {
                       >
                           Contact Us
                       </button>
+                      </Link>
                   </div>
               </Container>
           </div>
