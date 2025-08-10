@@ -107,7 +107,7 @@ export function Hero() {
                               <img
                                   src={heroImage}
                                   alt="Premium Furniture Collection"
-                                  className="w-full h-[500px] lg:h-[600px] object-cover"
+                                  className="w-full h-[400px] lg:h-[500px]  object-cover"
                               />
                               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
 
