@@ -204,7 +204,7 @@ export default function Login() {
             Sign in to your account
           </h2>
           <p className="mt-2 text-gray-600">
-            Or{" "}
+            Or
             <Link
               to="/signup"
               className="font-bold underline text-furniture hover:text-furniture-dark"

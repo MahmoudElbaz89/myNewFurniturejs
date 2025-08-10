@@ -27,20 +27,15 @@ const CheckoutForm = ({ shippingInfo, onSuccess, onBack }) => {
     }
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+const handleSubmit = (event) => {
+  event.preventDefault();
+  if (!stripe || !elements) return setProcessing(false);
 
-    if (!stripe || !elements) {
-      // Stripe.js has not loaded yet
-      setProcessing(false);
-      return;
-    }
+  setProcessing(true);
 
+  // Simulate payment delay
+  setTimeout(() => {
     try {
-      // For demo purposes, we'll simulate a successful payment
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-
-      // For demo, just call onSuccess
       setSucceeded(true);
       clearCart();
       onSuccess();
@@ -49,7 +44,8 @@ const CheckoutForm = ({ shippingInfo, onSuccess, onBack }) => {
       console.error("Payment error:", err);
       setProcessing(false);
     }
-  };
+  }, 1500);
+};
 
   const cardStyle = {
     style: {
