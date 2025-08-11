@@ -51,7 +51,7 @@ export function Hero() {
                               },
                           }}
                       >
-                          ✨ New Collection 2024
+                          ✨ New Collection 2025
                       </Badge>
 
                       {/* Main Headline */}
@@ -184,7 +184,7 @@ export function Hero() {
                                   to="/shop?category=Chairs"
                                   className="group"
                               >
-                                  <div className="bg-[rgb(199,230,219)] border  hover:bg-furniture-green hover:text-white   text-black  rounded-xl p-4 text-center transition-all duration-300">
+                                  <div className="bg-[rgb(199,230,219)] border  hover:bg-furniture-green hover:text-white   text-black  rounded-xl p-4 shadow-md text-center transition-all duration-300">
                                       <h4 className="font-semibold">Chairs</h4>
                                       <p className="text-sm opacity-80 group-hover:opacity-100">
                                           50+ Items
@@ -195,7 +195,7 @@ export function Hero() {
                                   to="/shop?category=Tables"
                                   className="group"
                               >
-                                  <div className="bg-[rgb(255,219,195)] hover:bg-furniture-green text-foreground hover:text-white rounded-xl p-4 text-center transition-all duration-300">
+                                  <div className="bg-[rgb(255,219,195)] hover:bg-furniture-green text-foreground hover:text-white rounded-xl p-4 shadow-md text-center transition-all duration-300">
                                       <h4 className="font-semibold">Tables</h4>
                                       <p className="text-sm opacity-80 group-hover:opacity-100">
                                           30+ Items

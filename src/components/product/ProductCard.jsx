@@ -23,7 +23,7 @@ export function ProductCard({ product }) {
 
     return (
         <>
-            <div className="relative overflow-hidden rounded-xl border bg-white border-gray-20 shadow transition-all duration-300 hover:shadow-lg hover:-translate-y-2 group">
+            <div className="relative overflow-hidden rounded-xl bg-white border border-gray-20 shadow transition-all duration-300 hover:shadow-lg hover:-translate-y-2 group">
                 <Link to={`/products/${product.id}`} className="block">
                     <div className="relative overflow-hidden">
                         <img
@@ -33,7 +33,7 @@ export function ProductCard({ product }) {
                         />
 
                         {discountPercentage > 0 && (
-                            <span className="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">
+                            <span className="absolute top-3 right-3 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">
                                 {discountPercentage}% OFF
                             </span>
                         )}
@@ -53,7 +53,7 @@ export function ProductCard({ product }) {
                             </span>
                             {product.originalPrice && (
                                 <span className="text-sm line-through text-gray-500">
-                                    <span className="text-sm">EGP</span>
+                                    <span className="text-sm">EGP </span>
                                     {product.originalPrice.toFixed(2)}
                                 </span>
                             )}

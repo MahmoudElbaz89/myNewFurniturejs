@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useCart } from "../../contexts/CartContext";
 import { useEffect, useState } from "react";
-import { products } from "../data/products";
 import avatar from "../../assets/avatar.jpeg";
 // MUI Icons
 import Star from "@mui/icons-material/Star";
@@ -14,8 +13,27 @@ export default function ProductDetails() {
     const [product, setProduct] = useState(null);
 
     useEffect(() => {
-        const found = products.find((item) => item.id.toString() === id);
-        setProduct(found || null);
+        try {
+            let storedProducts = JSON.parse(localStorage.getItem("products"));
+            if (!storedProducts || storedProducts.length === 0) {
+                // Fallback if somehow products not in localStorage yet
+                const {
+                    products: initialProducts,
+                } = require("../../data/products");
+                localStorage.setItem(
+                    "products",
+                    JSON.stringify(initialProducts)
+                );
+                storedProducts = initialProducts;
+            }
+            const foundProduct = storedProducts.find(
+                (p) => String(p.id) === String(id)
+            );
+            setProduct(foundProduct || null);
+        } catch (err) {
+            console.error("Error loading product from localStorage:", err);
+            setProduct(null);
+        }
     }, [id]);
 
     if (!product) {
@@ -41,12 +59,17 @@ export default function ProductDetails() {
 
     return (
         <div className="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-2 gap-16 ">
-            <div className="overflow-hidden rounded-xl shadow-lg">
+            <div className="overflow-hidden rounded-xl shadow-lg position relative border border-gray-200">
                 <img
                     src={product.image}
                     alt={product.name}
                     className="w-full h-full object-cover"
                 />
+                {discountPercentage > 0 && (
+                    <span className="bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded-full absolute top-5 right-5 ">
+                        {discountPercentage}% OFF
+                    </span>
+                )}
             </div>
             <div className="flex flex-col justify-between">
                 <div className="flex flex-col gap-4">
@@ -64,11 +87,6 @@ export default function ProductDetails() {
                             <span className="text-base line-through text-gray-500">
                                 <span className="text-sm">EGP</span>{" "}
                                 {product.originalPrice.toFixed(2)}
-                            </span>
-                        )}
-                        {discountPercentage > 0 && (
-                            <span className="bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded">
-                                {discountPercentage}% OFF
                             </span>
                         )}
                     </div>
@@ -113,7 +131,7 @@ export default function ProductDetails() {
                             <div className="flex flex-col">
                                 <div className="flex items-center gap-2">
                                     <span className="font-semibold">
-                                        John Doe
+                                        Ahmed Hazem
                                     </span>
                                     <div className="flex text-yellow-500">
                                         <Star fontSize="small" />
@@ -138,7 +156,7 @@ export default function ProductDetails() {
                 <button
                     onClick={handleAddToCart}
                     disabled={!product.inStock || product.stock <= 0}
-                    className={`w-full font-semibold text-lg mt-6 py-3 px-4  rounded-lg transition-all duration-300 ${
+                    className={`w-full font-semibold text-lg py-3 px-4 rounded-lg transition-all duration-300 ${
                         !product.inStock || product.stock <= 0
                             ? "bg-gray-300  cursor-not-allowed"
                             : "bg-furniture-warm hover:bg-[#2D6450] hover:text-white"

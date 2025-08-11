@@ -76,7 +76,7 @@ export default function About() {
                           Our Story
                       </span>
                       <h1 className="mb-6 font-semibold text-5xl ">
-                          Crafting Beautiful Spaces Since 2002
+                          Crafting Beautiful Spaces Since 2020
                       </h1>
                       <div className="space-y-4 text-gray-600 mb-8">
                           <p>

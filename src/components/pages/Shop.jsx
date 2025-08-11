@@ -1,15 +1,42 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import { useSearchParams, useLocation } from "react-router-dom";
 import { ProductCard } from "../product/ProductCard";
-import { products, categories } from "../data/products";
+import { categories as rawCategories } from "../data/products"; // removed initialProducts import
 import SearchIcon from "@mui/icons-material/Search";
 
 export default function Shop() {
     const [searchParams, setSearchParams] = useSearchParams();
     const location = useLocation();
     const searchInputRef = useRef(null);
+
     const [searchTerm, setSearchTerm] = useState("");
     const [sortBy, setSortBy] = useState("name");
+
+    // Only read from localStorage — no seeding here
+    const [productList, setProductList] = useState(() => {
+        try {
+            const saved = localStorage.getItem("products");
+            return saved ? JSON.parse(saved) : [];
+        } catch (err) {
+            console.error("Failed to load products from localStorage", err);
+            return [];
+        }
+    });
+
+    useEffect(() => {
+        try {
+            localStorage.setItem("products", JSON.stringify(productList));
+        } catch (err) {
+            console.error("Failed to save products to localStorage", err);
+        }
+    }, [productList]);
+
+    const categories = useMemo(() => {
+        if (!Array.isArray(rawCategories)) return [];
+        return rawCategories
+            .map((c) => (typeof c === "string" ? c : c?.name ?? String(c)))
+            .filter(Boolean);
+    }, []);
 
     const selectedCategory = searchParams.get("category") || "all";
 
@@ -19,32 +46,43 @@ export default function Shop() {
         }
     }, [location.state]);
 
+    // ------------- filtering & sorting -------------
     const filteredAndSortedProducts = useMemo(() => {
-        let filtered = products;
+        let filtered = productList;
 
         if (selectedCategory !== "all") {
+            filtered = filtered.filter((p) => {
+                const pCat =
+                    typeof p.category === "string"
+                        ? p.category
+                        : p.category?.name ?? "";
+                return pCat === selectedCategory;
+            });
+        }
+
+        if (searchTerm.trim()) {
+            const q = searchTerm.trim().toLowerCase();
             filtered = filtered.filter(
-                (product) => product.category === selectedCategory
+                (p) =>
+                    p.name.toLowerCase().includes(q) ||
+                    (p.description && p.description.toLowerCase().includes(q))
             );
         }
 
-        if (searchTerm) {
-            filtered = filtered.filter((product) =>
-                product.name.toLowerCase().includes(searchTerm.toLowerCase())
-            );
-        }
-
-        return filtered.sort((a, b) => {
+        const sorted = [...filtered].sort((a, b) => {
             switch (sortBy) {
                 case "price-low":
                     return a.price - b.price;
                 case "price-high":
                     return b.price - a.price;
                 case "name":
+                default:
                     return a.name.localeCompare(b.name);
             }
         });
-    }, [selectedCategory, searchTerm, sortBy]);
+
+        return sorted;
+    }, [productList, selectedCategory, searchTerm, sortBy]);
 
     const handleCategoryChange = (category) => {
         if (category === "all") {
@@ -56,6 +94,7 @@ export default function Shop() {
 
     return (
         <div className="min-h-screen color">
+            {/* Hero */}
             <section className="bg-gradient-to-r from-furniture-cream to-furniture-warm py-20">
                 <div className="max-w-7xl mx-auto px-4 text-center">
                     <h1 className="text-5xl font-bold mb-5">
@@ -68,6 +107,7 @@ export default function Shop() {
                 </div>
             </section>
 
+            {/* Controls + Products */}
             <div className="container mx-auto px-4 py-12">
                 <div className="flex flex-col lg:flex-row gap-4 mb-8">
                     <div className="relative flex-1">
@@ -106,6 +146,7 @@ export default function Shop() {
                     </div>
                 </div>
 
+                {/* Category pills */}
                 <div className="flex flex-wrap gap-2 mb-8">
                     <button
                         onClick={() => handleCategoryChange("all")}
@@ -117,21 +158,23 @@ export default function Shop() {
                     >
                         All
                     </button>
-                    {categories.map((category) => (
+
+                    {categories.map((cat) => (
                         <button
-                            key={category.name}
-                            onClick={() => handleCategoryChange(category.name)}
+                            key={cat}
+                            onClick={() => handleCategoryChange(cat)}
                             className={`rounded-full px-4 py-2 font-semibold text-sm border transition-colors duration-200 ${
-                                selectedCategory === category.name
+                                selectedCategory === cat
                                     ? "bg-[#3A785F] text-white hover:bg-[#2D6450]"
                                     : "bg-white text-black hover:bg-[#EED5C4]"
                             }`}
                         >
-                            {category.name}
+                            {cat}
                         </button>
                     ))}
                 </div>
 
+                {/* Product grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-12">
                     {filteredAndSortedProducts.map((product) => (
                         <ProductCard key={product.id} product={product} />
