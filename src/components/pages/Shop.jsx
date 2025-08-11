@@ -23,13 +23,6 @@ export default function Shop() {
         }
     });
 
-    useEffect(() => {
-        try {
-            localStorage.setItem("products", JSON.stringify(productList));
-        } catch (err) {
-            console.error("Failed to save products to localStorage", err);
-        }
-    }, [productList]);
 
     const categories = useMemo(() => {
         if (!Array.isArray(rawCategories)) return [];

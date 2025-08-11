@@ -4,8 +4,6 @@ import {
     TextField,
     Checkbox,
     FormControlLabel,
-    Typography,
-    FormHelperText,
 } from "@mui/material";
 import { Lock as LockIcon } from "@mui/icons-material";
 import { toast } from "sonner";
@@ -53,19 +51,6 @@ export default function Login() {
     const validateField = (name, value) => {
         if (!value) {
             return `${name === "email" ? "Email" : "Password"} is required`;
-        }
-
-        if (name === "email") {
-            const emailRegex = /^[\w\-\.]+@([\w]+\.)+[\w-]{2,4}$/;
-            if (!emailRegex.test(value)) {
-                return "Please enter a valid email address";
-            }
-        }
-
-        if (name === "password") {
-            if (value.length < 6) {
-                return "Password must be at least 6 characters";
-            }
         }
 
         return "";
@@ -237,7 +222,7 @@ export default function Login() {
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 error={!!errors.email || !!loginError}
-                                helperText={errors.email || (loginError && " ")}
+                                helperText={errors.email}
                                 variant="outlined"
                                 sx={{
                                     "& .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline":
@@ -259,9 +244,7 @@ export default function Login() {
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 error={!!errors.password || !!loginError}
-                                helperText={
-                                    errors.password || (loginError ? " " : "")
-                                }
+                                helperText={errors.password}
                                 variant="outlined"
                                 sx={{
                                     "& .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline":
