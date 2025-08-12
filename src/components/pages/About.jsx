@@ -153,7 +153,7 @@ export default function About() {
                           and find the perfect pieces for your home.
                       </Typography>
                   </div>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <div className="flex flex-row gap-4 justify-center">
                       <Link to="/shop">
                           <button
                               component={Link}

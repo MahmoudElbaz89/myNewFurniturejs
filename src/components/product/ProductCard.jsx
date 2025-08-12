@@ -33,7 +33,7 @@ export function ProductCard({ product }) {
                         />
 
                         {discountPercentage > 0 && (
-                            <span className="absolute top-3 right-3 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+                            <span className="absolute top-3 right-3 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full group-hover:scale-105 transition-all duration-300 ">
                                 {discountPercentage}% OFF
                             </span>
                         )}

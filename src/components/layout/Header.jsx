@@ -42,7 +42,7 @@ export default function Header() {
                         <img
                             src={logo}
                             alt="Furniture"
-                            className="h-7 w-auto " // Resizes image proportionally
+                            className="h-7 w-auto " 
                         />
                         <p className="[@media(max-width:380px)]:hidden flex text-lg sm:text-xl font-bold text-gray-900 whitespace-nowrap">
                             Modern Furniture

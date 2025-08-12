@@ -16,11 +16,13 @@ const CartItem = ({ item, onUpdateQuantity, onRemove }) => {
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
             <div className="p-6">
                 <div className="flex flex-col md:flex-row gap-6">
+                    <Link to={`/products/${product.id}`} className="self-center sm:self-start">
                     <img
                         src={product.image}
                         alt={product.name}
-                        className="w-[130px] h-[130px] object-cover rounded-lg"
+                        className="w-[150px] h-[150px] object-cover rounded-lg "
                     />
+                    </Link>
 
                     <div className="flex-1 flex flex-col">
                         <div className="flex justify-between items-start">

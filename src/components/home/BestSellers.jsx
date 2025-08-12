@@ -1,6 +1,5 @@
 import { ProductCard } from "../product/ProductCard";
 import { products } from "../data/products";
-import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import { useMemo } from "react";
 

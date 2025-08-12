@@ -18,7 +18,7 @@ export default function Footer() {
                             <img
                                 src={logo}
                                 alt="Furniture"
-                                className="h-7 w-auto" // Resizes image proportionally
+                                className="h-7 w-auto" 
                             />
                             <p className="rounded-sm flex items-center justify-center text-xl font-bold text-gray-900">
                                 Modern Furniture

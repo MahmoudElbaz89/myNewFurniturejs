@@ -10,11 +10,9 @@ import { products } from "../data/products";
 import heroImage from "../../assets/hero-bg.jpg";
 
 export function Hero() {
-  // Find a specific product to feature, for example, the one with id '4'
   const featuredProduct = products.find((p) => p.id === "1");
   const featuredProduct2 = products.find((p) => p.id === "14");
 
-  // Fallback to the first product if the featured one isn't found
   const { name, price, image, id } = featuredProduct || products[1];
   const {
     name: name2,
@@ -31,7 +29,6 @@ export function Hero() {
               <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-20">
                   {/* Left Content - Main Hero Text */}
                   <div className="lg:col-span-6 space-y-6 md:space-y-8 animate-fade-in">
-                      {/* Badge */}
                       <Badge
                           variant="outlined"
                           sx={{
@@ -88,11 +85,11 @@ export function Hero() {
                       {/* shop Button */}
                       <div className="z-50">
                           <Link to="/shop">
-                              <button className="bg-furniture-green text-white rounded-md px-8 py-2 hover:scale-105 hover:bg-[rgb(76,132,110)] transition-all duration-300 group">
-                                  Shop Collection
+                              <button className="bg-furniture-green font-semibold text-white rounded-md px-5 py-2 hover:scale-105 hover:bg-[rgb(76,132,110)] transition-all duration-300 group">
+                                  <span>Shop Collection</span>
                                   <ArrowForwardIcon
                                       fontSize=""
-                                      className="ml-4 h-4 w-4 transition-all group-hover:translate-x-1 duration-800"
+                                      className="ml-2 group-hover:translate-x-1"
                                   />
                               </button>
                           </Link>
@@ -121,7 +118,7 @@ export function Hero() {
                                           <div className="flex items-center gap-3">
                                               <img
                                                   src={image}
-                                                  alt={name} // Use the dynamic product name for alt text
+                                                  alt={name}
                                                   className="w-12 h-12 rounded-lg object-cover"
                                               />
                                               <div>
@@ -149,7 +146,7 @@ export function Hero() {
                                           <div className="flex items-center gap-3">
                                               <img
                                                   src={image2}
-                                                  alt={name2} // Use the dynamic product name for alt text
+                                                  alt={name2}
                                                   className="w-12 h-12 rounded-lg object-cover"
                                               />
                                               <div>
